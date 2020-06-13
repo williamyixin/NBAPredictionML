@@ -189,3 +189,6 @@ with open(scoring_offense, 'wb+') as csv_file:
             #final_data.append(row)
             writer.writerow(row)
     print "scoring offense done"
+
+
+
