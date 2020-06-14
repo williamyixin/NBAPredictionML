@@ -60,7 +60,7 @@ with open(rush_off, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "rush offense done"
+    print("rush offense done")
     #print final_data
 
 #http://www.cfbstats.com/2014/leader/818/team/offense/split01/category02/sort01.html
@@ -87,7 +87,7 @@ with open(pass_off, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "pass offense done"
+    print("pass offense done")
 
 #http://www.cfbstats.com/2014/leader/905/team/defense/split01/category01/sort01.html
 
@@ -112,7 +112,7 @@ with open(rush_def, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "rush defense done"
+    print("rush defense done")
 
 
 #team/defense/split01/category02/sort01.html
@@ -137,7 +137,7 @@ with open(pass_def, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "pass defense done"
+    print("pass defense done")
 
 #http://www.cfbstats.com/2014/leader/905/team/offense/split01/category12/sort01.html
 
@@ -163,7 +163,7 @@ with open(turnover_margin, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "turnover margin done"
+    print("turnover margin done")
 
 #http://www.cfbstats.com/2014/leader/823/team/offense/split01/category09/sort01.html
 
@@ -188,7 +188,7 @@ with open(scoring_offense, 'wb+') as csv_file:
             row = [elem.text.strip().encode('utf-8') for elem in tds]
             #final_data.append(row)
             writer.writerow(row)
-    print "scoring offense done"
+    print("scoring offense done")
 
 
 
