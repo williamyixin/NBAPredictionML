@@ -11,8 +11,8 @@ with open(player_data, 'wb+') as csv_file:
     writer.writeheader()
     writer = csv.writer(csv_file)
     url = 'https://www.basketball-reference.com/leagues/NBA_2020_advanced.html'
-    r  = requests.get(url)
-
+    r = requests.get(url)
+    data = r.text
     soup = BeautifulSoup(data, "html.parser")
 
     table = soup.find('tbody')
