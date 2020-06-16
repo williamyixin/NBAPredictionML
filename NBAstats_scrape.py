@@ -19,7 +19,7 @@ with open(player_data, 'wb+') as csv_file:
 
     for entry in table.find_all('tr'):
         row = []
-        for cell in table.find_all('td'):
+        for cell in entry.find_all('td'):
             if cell.attrs['data-stat'] == 'player':
                 name = cell.find('a').text.strip()
                 print(name)
