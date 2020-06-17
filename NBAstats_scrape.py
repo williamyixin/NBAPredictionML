@@ -2,7 +2,8 @@
 A web scraper used to scrape the listed site for basketball data. 
 @author: William Zhang, Timothy Wu
 '''
-
+import numpy as np
+import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import csv
@@ -38,25 +39,29 @@ with open(player_data, mode = 'w') as csv_file:
         row = []
         for cell in entry.find_all('td'):
             if cell.attrs['data-stat'] == 'player':
-                name = cell.find('a').text.strip().encode('utf-8')
+                name = cell.find('a').text.strip()
                 row.append(name)
             elif cell.attrs['data-stat'] == 'team_id':
                 team = ""
                 if cell.find('a') == None: 
-                    team = cell.text.strip().encode('utf-8')
+                    team = cell.text.strip()
                 else: 
-                    team = cell.find('a').text.strip().encode('utf-8')
+                    team = cell.find('a').text.strip()
                 row.append(team)
             elif cell.attrs['data-stat'] == 'mp':
-                mp = cell.text.strip().encode('utf-8')
+                mp = cell.text.strip()
                 row.append(mp)
             elif cell.attrs['data-stat'] == 'per':
-                per = cell.text.strip().encode('utf-8')
+                per = cell.text.strip()
                 row.append(per)
         all_rows.append(row)
 
     print(all_rows)
-    writer.writerows(all_rows)
+    #writer.writerows(all_rows)
+
+    data = np.array(all_rows[1:])
+    df = pd.DataFrame(data=all_rows,  columns=player_data_headers)
+    df.to_csv('Player_Data_pandas.csv', encoding = 'utf-8')
             
 for team_name in team_abbreviations:
     team_data = team_name + ".csv"
