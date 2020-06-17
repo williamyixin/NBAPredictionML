@@ -9,7 +9,39 @@ import requests
 import csv
 from datetime import datetime
 
-# Create a CSV file with the current DateTime in the name
+'''
+Returns the end of season PER's for the previous season. 
+These stats will be used in place of stats for the current season 
+When stats for the current season are insufficient.
+'''
+def generate_previous_season(curr_year):
+    prev_year = curr_year - 1
+    url = 'https://www.basketball-reference.com/leagues/NBA_' + str(prev_year) + '_advanced.html'
+    r = requests.get(url)
+    data = r.text
+    soup = BeautifulSoup(data, "html.parser")
+    table = soup.find('tbody')
+    all_rows = []
+    stats_we_want = ['player', 'mp', 'per', 'ows', 'dws', 'ws', 'ws_per_48', 'obpm', 'dbpm', 'bpm', 'vorp' ]
+    for entry in table.find_all('tr'):
+        row = []
+        for cell in entry.find_all('td'):
+            if cell.attrs['data-stat'] == 'player':
+                name = cell.find('a').text.strip()
+                row.append(name)
+            elif cell.attrs['data-stat'] in stats_we_want:
+                stat = cell.text.strip()
+                row.append(stat)
+        if len(row) != 0 and (len(all_rows) == 0 or all_rows[-1][0] != row[0]):
+            all_rows.append(row)
+    df = pd.DataFrame(data=all_rows,  columns=stats_we_want)
+    df.set_index(['player'], drop = True, inplace = True)
+    print(df.head())
+    df.to_csv('data/' + str(prev_year) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
+        
+
+
+'''# Create a CSV file with the current DateTime in the name
 current_time = datetime.now()
 dt_string = current_time.strftime("%d/%m/%Y %H:%M:%S")
 player_data = "Player_Data.csv"
@@ -87,3 +119,4 @@ for team_name in team_abbreviations:
     
             
 
+'''
