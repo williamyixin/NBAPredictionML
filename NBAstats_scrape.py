@@ -79,7 +79,7 @@ for team_name in team_abbreviations:
                 if cell.attrs['data-stat'] == 'player':
                     name = cell.find('a').text.strip().encode('utf-8')
                     row.append(name)
-                    break;
+                    break
             row.append(team_name.encode('utf-8'))
             all_rows.append(row)
 
