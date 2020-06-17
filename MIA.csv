@@ -1,18 +1,18 @@
-Name,Team
-b'Bam Adebayo',b'MIA'
-b'Duncan Robinson',b'MIA'
-b'Kendrick Nunn',b'MIA'
-b'Kelly Olynyk',b'MIA'
-b'Jimmy Butler',b'MIA'
-b'Goran Dragi\xc4\x87',b'MIA'
-b'Derrick Jones Jr.',b'MIA'
-b'Meyers Leonard',b'MIA'
-b'Tyler Herro',b'MIA'
-b'Chris Silva',b'MIA'
-b'Andre Iguodala',b'MIA'
-b'Jae Crowder',b'MIA'
-b'Solomon Hill',b'MIA'
-b'Gabe Vincent',b'MIA'
-b'KZ Okpala',b'MIA'
-b'Udonis Haslem',b'MIA'
-b'Kyle Alexander',b'MIA'
+Name,Team,Position
+Bam Adebayo,MIA,PF
+Duncan Robinson,MIA,SF
+Kendrick Nunn,MIA,SG
+Kelly Olynyk,MIA,C
+Jimmy Butler,MIA,SF
+Goran Dragić,MIA,PG
+Derrick Jones Jr.,MIA,SF
+Meyers Leonard,MIA,C
+Tyler Herro,MIA,SG
+Chris Silva,MIA,PF
+Andre Iguodala,MIA,SG
+Jae Crowder,MIA,SF
+Solomon Hill,MIA,SF
+Gabe Vincent,MIA,PG
+KZ Okpala,MIA,SF
+Udonis Haslem,MIA,PF
+Kyle Alexander,MIA,F

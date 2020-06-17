@@ -1,17 +1,17 @@
-Name,Team
-b'Tobias Harris',b'PHI'
-b'Furkan Korkmaz',b'PHI'
-b'Mike Scott',b'PHI'
-b'Al Horford',b'PHI'
-b'Matisse Thybulle',b'PHI'
-b'Ben Simmons',b'PHI'
-b'Raul Neto',b'PHI'
-b'Josh Richardson',b'PHI'
-b'Joel Embiid',b'PHI'
-b'Shake Milton',b'PHI'
-"b""Kyle O'Quinn""",b'PHI'
-b'Norvel Pelle',b'PHI'
-b'Glenn Robinson III',b'PHI'
-b'Alec Burks',b'PHI'
-b'Zhaire Smith',b'PHI'
-b'Marial Shayok',b'PHI'
+Name,Team,Position
+Tobias Harris,PHI,PF
+Furkan Korkmaz,PHI,SG
+Mike Scott,PHI,PF
+Al Horford,PHI,C
+Matisse Thybulle,PHI,SG
+Ben Simmons,PHI,PG
+Raul Neto,PHI,PG
+Josh Richardson,PHI,SG
+Joel Embiid,PHI,C
+Shake Milton,PHI,SG
+Kyle O'Quinn,PHI,C
+Norvel Pelle,PHI,C
+Glenn Robinson III,PHI,SF
+Alec Burks,PHI,SG
+Zhaire Smith,PHI,SG
+Marial Shayok,PHI,SG

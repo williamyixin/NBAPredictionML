@@ -1,18 +1,18 @@
-Name,Team
-b'Coby White',b'CHI'
-b'Tom\xc3\xa1\xc5\xa1 Satoransk\xc3\xbd',b'CHI'
-b'Thaddeus Young',b'CHI'
-b'Zach LaVine',b'CHI'
-b'Ryan Arcidiacono',b'CHI'
-b'Kris Dunn',b'CHI'
-b'Lauri Markkanen',b'CHI'
-b'Wendell Carter Jr.',b'CHI'
-b'Daniel Gafford',b'CHI'
-b'Shaquille Harrison',b'CHI'
-b'Denzel Valentine',b'CHI'
-b'Luke Kornet',b'CHI'
-b'Chandler Hutchison',b'CHI'
-b'Cristiano Fel\xc3\xadcio',b'CHI'
-b'Otto Porter',b'CHI'
-b'Adam Mokoka',b'CHI'
-b'Max Strus',b'CHI'
+Name,Team,Position
+Coby White,CHI,SG
+Tomáš Satoranský,CHI,PG
+Thaddeus Young,CHI,PF
+Zach LaVine,CHI,SG
+Ryan Arcidiacono,CHI,PG
+Kris Dunn,CHI,PG
+Lauri Markkanen,CHI,PF
+Wendell Carter Jr.,CHI,C
+Daniel Gafford,CHI,C
+Shaquille Harrison,CHI,SF
+Denzel Valentine,CHI,SF
+Luke Kornet,CHI,C
+Chandler Hutchison,CHI,SF
+Cristiano Felício,CHI,PF
+Otto Porter,CHI,SF
+Adam Mokoka,CHI,SG
+Max Strus,CHI,SG

@@ -1,17 +1,17 @@
-Name,Team
-"b""De'Andre Hunter""",b'ATL'
-b'Trae Young',b'ATL'
-b'Vince Carter',b'ATL'
-b'Cam Reddish',b'ATL'
-b'Kevin Huerter',b'ATL'
-b'Bruno Fernando',b'ATL'
-b'Damian Jones',b'ATL'
-"b""DeAndre' Bembry""",b'ATL'
-b'John Collins',b'ATL'
-b'Brandon Goodwin',b'ATL'
-b'Jeff Teague',b'ATL'
-b'Treveon Graham',b'ATL'
-b'Dewayne Dedmon',b'ATL'
-b'Charlie Brown',b'ATL'
-b'Clint Capela',b'ATL'
-b'Skal Labissi\xc3\xa8re',b'ATL'
+Name,Team,Position
+De'Andre Hunter,ATL,SF
+Trae Young,ATL,PG
+Vince Carter,ATL,SF
+Cam Reddish,ATL,SF
+Kevin Huerter,ATL,SG
+Bruno Fernando,ATL,C
+Damian Jones,ATL,C
+DeAndre' Bembry,ATL,SG
+John Collins,ATL,PF
+Brandon Goodwin,ATL,PG
+Jeff Teague,ATL,PG
+Treveon Graham,ATL,SG
+Dewayne Dedmon,ATL,C
+Charlie Brown,ATL,SG
+Clint Capela,ATL,C
+Skal Labissière,ATL,F

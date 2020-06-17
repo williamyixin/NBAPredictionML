@@ -1,18 +1,18 @@
-Name,Team
-b'Brad Wanamaker',b'BOS'
-b'Grant Williams',b'BOS'
-b'Semi Ojeleye',b'BOS'
-b'Jayson Tatum',b'BOS'
-b'Daniel Theis',b'BOS'
-b'Marcus Smart',b'BOS'
-b'Enes Kanter',b'BOS'
-b'Kemba Walker',b'BOS'
-b'Jaylen Brown',b'BOS'
-b'Gordon Hayward',b'BOS'
-b'Javonte Green',b'BOS'
-b'Carsen Edwards',b'BOS'
-b'Romeo Langford',b'BOS'
-b'Robert Williams',b'BOS'
-b'Vincent Poirier',b'BOS'
-b'Tremont Waters',b'BOS'
-b'Tacko Fall',b'BOS'
+Name,Team,Position
+Brad Wanamaker,BOS,PG
+Grant Williams,BOS,PF
+Semi Ojeleye,BOS,PF
+Jayson Tatum,BOS,PF
+Daniel Theis,BOS,C
+Marcus Smart,BOS,SG
+Enes Kanter,BOS,C
+Kemba Walker,BOS,PG
+Jaylen Brown,BOS,SF
+Gordon Hayward,BOS,SF
+Javonte Green,BOS,SF
+Carsen Edwards,BOS,SG
+Romeo Langford,BOS,SG
+Robert Williams,BOS,C
+Vincent Poirier,BOS,C
+Tremont Waters,BOS,PG
+Tacko Fall,BOS,C

@@ -1,16 +1,16 @@
-Name,Team
-b'Mikal Bridges',b'PHO'
-b'Devin Booker',b'PHO'
-b'Dario \xc5\xa0ari\xc4\x87',b'PHO'
-b'Ricky Rubio',b'PHO'
-b'Kelly Oubre Jr.',b'PHO'
-b'Elie Okobo',b'PHO'
-b'Jevon Carter',b'PHO'
-b'Cameron Johnson',b'PHO'
-b'Cheick Diallo',b'PHO'
-b'Aron Baynes',b'PHO'
-b'Frank Kaminsky',b'PHO'
-b'Deandre Ayton',b'PHO'
-b'Ty Jerome',b'PHO'
-b'Jalen Lecque',b'PHO'
-b'Tariq Owens',b'PHO'
+Name,Team,Position
+Mikal Bridges,PHO,SF
+Devin Booker,PHO,SG
+Dario Šarić,PHO,PF
+Ricky Rubio,PHO,PG
+Kelly Oubre Jr.,PHO,SF
+Elie Okobo,PHO,PG
+Jevon Carter,PHO,PG
+Cameron Johnson,PHO,PF
+Cheick Diallo,PHO,C
+Aron Baynes,PHO,C
+Frank Kaminsky,PHO,C
+Deandre Ayton,PHO,C
+Ty Jerome,PHO,PG
+Jalen Lecque,PHO,PG
+Tariq Owens,PHO,PF

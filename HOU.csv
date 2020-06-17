@@ -1,18 +1,18 @@
-Name,Team
-b'P.J. Tucker',b'HOU'
-b'Ben McLemore',b'HOU'
-b'James Harden',b'HOU'
-b'Austin Rivers',b'HOU'
-b'Danuel House',b'HOU'
-b'Russell Westbrook',b'HOU'
-b'Thabo Sefolosha',b'HOU'
-b'Eric Gordon',b'HOU'
-b'Chris Clemons',b'HOU'
-b'Tyson Chandler',b'HOU'
-b'Isaiah Hartenstein',b'HOU'
-b'Robert Covington',b'HOU'
-b'Jeff Green',b'HOU'
-b'Michael Frazier',b'HOU'
-b'DeMarre Carroll',b'HOU'
-b'Bruno Caboclo',b'HOU'
-b'William Howard',b'HOU'
+Name,Team,Position
+P.J. Tucker,HOU,PF
+Ben McLemore,HOU,SG
+James Harden,HOU,SG
+Austin Rivers,HOU,SG
+Danuel House,HOU,SF
+Russell Westbrook,HOU,PG
+Thabo Sefolosha,HOU,PF
+Eric Gordon,HOU,SG
+Chris Clemons,HOU,SG
+Tyson Chandler,HOU,C
+Isaiah Hartenstein,HOU,C
+Robert Covington,HOU,PF
+Jeff Green,HOU,PF
+Michael Frazier,HOU,SG
+DeMarre Carroll,HOU,SF
+Bruno Caboclo,HOU,SF
+William Howard,HOU,SG

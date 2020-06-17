@@ -1,18 +1,18 @@
-Name,Team
-b'Troy Brown Jr.',b'WAS'
-b'Ish Smith',b'WAS'
-b'Isaac Bonga',b'WAS'
-b'Bradley Beal',b'WAS'
-b'D\xc4\x81vis Bert\xc4\x81ns',b'WAS'
-b'Rui Hachimura',b'WAS'
-b'Thomas Bryant',b'WAS'
-b'Ian Mahinmi',b'WAS'
-b'Moritz Wagner',b'WAS'
-b'Gary Payton II',b'WAS'
-b'Admiral Schofield',b'WAS'
-b'An\xc5\xbeejs Pase\xc4\x8d\xc5\x86iks',b'WAS'
-b'Garrison Mathews',b'WAS'
-b'Shabazz Napier',b'WAS'
-b'Jerome Robinson',b'WAS'
-b'Johnathan Williams',b'WAS'
-b'John Wall',b'WAS'
+Name,Team,Position
+Troy Brown Jr.,WAS,SG
+Ish Smith,WAS,PG
+Isaac Bonga,WAS,SF
+Bradley Beal,WAS,SG
+Dāvis Bertāns,WAS,PF
+Rui Hachimura,WAS,PF
+Thomas Bryant,WAS,C
+Ian Mahinmi,WAS,C
+Moritz Wagner,WAS,C
+Gary Payton II,WAS,PG
+Admiral Schofield,WAS,SF
+Anžejs Pasečņiks,WAS,C
+Garrison Mathews,WAS,SG
+Shabazz Napier,WAS,PG
+Jerome Robinson,WAS,SG
+Johnathan Williams,WAS,C
+John Wall,WAS,G

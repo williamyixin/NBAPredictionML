@@ -1,18 +1,18 @@
-Name,Team
-b'Collin Sexton',b'CLE'
-b'Cedi Osman',b'CLE'
-b'Darius Garland',b'CLE'
-b'Tristan Thompson',b'CLE'
-b'Matthew Dellavedova',b'CLE'
-b'Kevin Love',b'CLE'
-b'Larry Nance Jr.',b'CLE'
-b'Kevin Porter Jr.',b'CLE'
-b'Alfonzo McKinnie',b'CLE'
-b'Dante Exum',b'CLE'
-b'Ante \xc5\xbdi\xc5\xbei\xc4\x87',b'CLE'
-b'Dean Wade',b'CLE'
-b'Andre Drummond',b'CLE'
-b'Matt Mooney',b'CLE'
-"b""Sir'Dominic Pointer""",b'CLE'
-b'Sheldon Mac',b'CLE'
-b'Dylan Windler',b'CLE'
+Name,Team,Position
+Collin Sexton,CLE,SG
+Cedi Osman,CLE,SF
+Darius Garland,CLE,PG
+Tristan Thompson,CLE,C
+Matthew Dellavedova,CLE,PG
+Kevin Love,CLE,PF
+Larry Nance Jr.,CLE,C
+Kevin Porter Jr.,CLE,SF
+Alfonzo McKinnie,CLE,SF
+Dante Exum,CLE,SG
+Ante Žižić,CLE,C
+Dean Wade,CLE,PF
+Andre Drummond,CLE,C
+Matt Mooney,CLE,SG
+Sir'Dominic Pointer,CLE,G-F
+Sheldon Mac,CLE,G
+Dylan Windler,CLE,G-F

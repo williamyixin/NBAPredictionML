@@ -1,17 +1,17 @@
-Name,Team
-b'Jarrett Culver',b'MIN'
-b'Josh Okogie',b'MIN'
-b'Karl-Anthony Towns',b'MIN'
-b'Kelan Martin',b'MIN'
-b'Naz Reid',b'MIN'
-b'Jordan McLaughlin',b'MIN'
-b'Jake Layman',b'MIN'
-b'Jaylen Nowell',b'MIN'
-b'Malik Beasley',b'MIN'
-b'Juan Hernang\xc3\xb3mez',b'MIN'
-b'James Johnson',b'MIN'
-"b""D'Angelo Russell""",b'MIN'
-b'Jarred Vanderbilt',b'MIN'
-b'Jacob Evans',b'MIN'
-b'Evan Turner',b'MIN'
-b'Omari Spellman',b'MIN'
+Name,Team,Position
+Jarrett Culver,MIN,SG
+Josh Okogie,MIN,SG
+Karl-Anthony Towns,MIN,C
+Kelan Martin,MIN,SF
+Naz Reid,MIN,C
+Jordan McLaughlin,MIN,PG
+Jake Layman,MIN,PF
+Jaylen Nowell,MIN,SG
+Malik Beasley,MIN,SG
+Juan Hernangómez,MIN,PF
+James Johnson,MIN,PF
+D'Angelo Russell,MIN,PG
+Jarred Vanderbilt,MIN,PF
+Jacob Evans,MIN,SG
+Evan Turner,MIN,G
+Omari Spellman,MIN,F

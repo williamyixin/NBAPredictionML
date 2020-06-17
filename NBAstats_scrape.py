@@ -21,14 +21,48 @@ player_data_headers = ['Name', 'Team', 'Minutes Played', 'PER']
 curr_year = 2020
 # Team abbreviations
 team_abbreviations = ['TOR', 'BOS', 'PHI', 'BRK', 'NYK', 'MIL', 'IND', 'CHI', 'DET', 'CLE', 'MIA', 'ORL', 'WAS', 'CHO', 'ATL','DEN','UTA', 'OKC', 'POR', 'MIN', 'LAL', 'LAC','SAC','PHO','GSW','HOU', 'DAL', 'MEM','NOP','SAS']
-player_team_headers = ['Name', 'Team'] 
+player_team_headers = ['Name', 'Team', 'Position'] 
 
-with open(player_data, mode = 'w') as csv_file:
-    writer = csv.writer(csv_file)
-    writer.writerow(player_data_headers)
-    
 
-    url = 'https://www.basketball-reference.com/leagues/NBA_2020_advanced.html'
+url = 'https://www.basketball-reference.com/leagues/NBA_2020_advanced.html'
+r = requests.get(url)
+data = r.text
+soup = BeautifulSoup(data, "html.parser")
+
+table = soup.find('tbody')
+all_rows = []
+for entry in table.find_all('tr'):
+    row = []
+    for cell in entry.find_all('td'):
+        if cell.attrs['data-stat'] == 'player':
+            name = cell.find('a').text.strip()
+            row.append(name)
+        elif cell.attrs['data-stat'] == 'team_id':
+            team = ""
+            if cell.find('a') == None: 
+                team = cell.text.strip()
+            else: 
+                team = cell.find('a').text.strip()
+            row.append(team)
+        elif cell.attrs['data-stat'] == 'mp':
+            mp = cell.text.strip()
+            row.append(mp)
+        elif cell.attrs['data-stat'] == 'per':
+            per = cell.text.strip()
+            row.append(per)
+    all_rows.append(row)
+
+
+df = pd.DataFrame(data=all_rows,  columns=player_data_headers)
+df.set_index(['Name', 'Team'], drop = True, inplace = True)
+print(df.head())
+df.to_csv('Player_Data_pandas.csv', encoding = 'utf-8')
+        
+for team_name in team_abbreviations:
+    team_data = team_name + ".csv"
+     
+
+    url = 'https://www.basketball-reference.com/teams/' + team_name + '/' + str(curr_year) + '.html'
     r = requests.get(url)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
@@ -41,54 +75,15 @@ with open(player_data, mode = 'w') as csv_file:
             if cell.attrs['data-stat'] == 'player':
                 name = cell.find('a').text.strip()
                 row.append(name)
-            elif cell.attrs['data-stat'] == 'team_id':
-                team = ""
-                if cell.find('a') == None: 
-                    team = cell.text.strip()
-                else: 
-                    team = cell.find('a').text.strip()
-                row.append(team)
-            elif cell.attrs['data-stat'] == 'mp':
-                mp = cell.text.strip()
-                row.append(mp)
-            elif cell.attrs['data-stat'] == 'per':
-                per = cell.text.strip()
-                row.append(per)
+                row.append(team_name)
+            elif cell.attrs['data-stat'] == 'pos':
+                pos = cell.text.strip()
+                row.append(pos)
         all_rows.append(row)
-
-    print(all_rows)
-    #writer.writerows(all_rows)
-
-    data = np.array(all_rows[1:])
-    df = pd.DataFrame(data=all_rows,  columns=player_data_headers)
-    df.to_csv('Player_Data_pandas.csv', encoding = 'utf-8')
-            
-for team_name in team_abbreviations:
-    team_data = team_name + ".csv"
-
-    with open(team_data, mode = 'w') as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerow(player_team_headers)
-        
-
-        url = 'https://www.basketball-reference.com/teams/' + team_name + '/' + str(curr_year) + '.html'
-        r = requests.get(url)
-        data = r.text
-        soup = BeautifulSoup(data, "html.parser")
-
-        table = soup.find('tbody')
-        all_rows = []
-        for entry in table.find_all('tr'):
-            row = []
-            for cell in entry.find_all('td'):
-                if cell.attrs['data-stat'] == 'player':
-                    name = cell.find('a').text.strip().encode('utf-8')
-                    row.append(name)
-                    break
-            row.append(team_name.encode('utf-8'))
-            all_rows.append(row)
-
-        print(all_rows)
-        writer.writerows(all_rows)
+    df = pd.DataFrame(data=all_rows,  columns=player_team_headers)
+    df.set_index(['Name', 'Team'], drop = True, inplace = True)
+    print(df.head())
+    df.to_csv(team_data, encoding = 'utf-8')
+    
             
 

@@ -1,18 +1,18 @@
-Name,Team
-b'Terence Davis',b'TOR'
-b'OG Anunoby',b'TOR'
-b'Chris Boucher',b'TOR'
-b'Pascal Siakam',b'TOR'
-b'Kyle Lowry',b'TOR'
-b'Rondae Hollis-Jefferson',b'TOR'
-b'Serge Ibaka',b'TOR'
-b'Fred VanVleet',b'TOR'
-b'Norman Powell',b'TOR'
-b'Patrick McCaw',b'TOR'
-b'Marc Gasol',b'TOR'
-b'Matt Thomas',b'TOR'
-b'Malcolm Miller',b'TOR'
-b'Stanley Johnson',b'TOR'
-b'Oshae Brissett',b'TOR'
-b'Dewan Hernandez',b'TOR'
-b'Paul Watson',b'TOR'
+Name,Team,Position
+Terence Davis,TOR,SG
+OG Anunoby,TOR,SF
+Chris Boucher,TOR,PF
+Pascal Siakam,TOR,PF
+Kyle Lowry,TOR,PG
+Rondae Hollis-Jefferson,TOR,SF
+Serge Ibaka,TOR,C
+Fred VanVleet,TOR,PG
+Norman Powell,TOR,SG
+Patrick McCaw,TOR,SF
+Marc Gasol,TOR,C
+Matt Thomas,TOR,SG
+Malcolm Miller,TOR,SF
+Stanley Johnson,TOR,PF
+Oshae Brissett,TOR,SF
+Dewan Hernandez,TOR,C
+Paul Watson,TOR,SF

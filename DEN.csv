@@ -1,17 +1,17 @@
-Name,Team
-b'Nikola Joki\xc4\x87',b'DEN'
-b'Monte Morris',b'DEN'
-b'Jerami Grant',b'DEN'
-b'Will Barton',b'DEN'
-b'Gary Harris',b'DEN'
-b'Jamal Murray',b'DEN'
-b'Mason Plumlee',b'DEN'
-b'Torrey Craig',b'DEN'
-b'Michael Porter Jr.',b'DEN'
-b'Paul Millsap',b'DEN'
-b'PJ Dozier',b'DEN'
-b'Vlatko \xc4\x8can\xc4\x8dar',b'DEN'
-b'Noah Vonleh',b'DEN'
-b'Keita Bates-Diop',b'DEN'
-b'Troy Daniels',b'DEN'
-b'Bol Bol',b'DEN'
+Name,Team,Position
+Nikola Jokić,DEN,C
+Monte Morris,DEN,PG
+Jerami Grant,DEN,PF
+Will Barton,DEN,SF
+Gary Harris,DEN,SG
+Jamal Murray,DEN,PG
+Mason Plumlee,DEN,C
+Torrey Craig,DEN,SF
+Michael Porter Jr.,DEN,PF
+Paul Millsap,DEN,PF
+PJ Dozier,DEN,PG
+Vlatko Čančar,DEN,SF
+Noah Vonleh,DEN,PF
+Keita Bates-Diop,DEN,SF
+Troy Daniels,DEN,SG
+Bol Bol,DEN,C

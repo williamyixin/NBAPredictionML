@@ -1,18 +1,18 @@
-Name,Team
-b'Justin Holiday',b'IND'
-b'T.J. McConnell',b'IND'
-b'Domantas Sabonis',b'IND'
-b'Doug McDermott',b'IND'
-b'T.J. Warren',b'IND'
-b'Aaron Holiday',b'IND'
-b'Myles Turner',b'IND'
-b'Goga Bitadze',b'IND'
-b'Malcolm Brogdon',b'IND'
-b'Jeremy Lamb',b'IND'
-b'JaKarr Sampson',b'IND'
-b'Edmond Sumner',b'IND'
-b'T.J. Leaf',b'IND'
-b'Victor Oladipo',b'IND'
-b'Alize Johnson',b'IND'
-b'Brian Bowen',b'IND'
-b'Naz Mitrou-Long',b'IND'
+Name,Team,Position
+Justin Holiday,IND,SG
+T.J. McConnell,IND,PG
+Domantas Sabonis,IND,C
+Doug McDermott,IND,PF
+T.J. Warren,IND,SF
+Aaron Holiday,IND,PG
+Myles Turner,IND,C
+Goga Bitadze,IND,C
+Malcolm Brogdon,IND,PG
+Jeremy Lamb,IND,SG
+JaKarr Sampson,IND,SF
+Edmond Sumner,IND,PG
+T.J. Leaf,IND,PF
+Victor Oladipo,IND,SG
+Alize Johnson,IND,SF
+Brian Bowen,IND,SG
+Naz Mitrou-Long,IND,SG
