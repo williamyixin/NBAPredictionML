@@ -56,4 +56,6 @@ def PER_Calculator(aPERs):
     return aPERs
 
 # takes pandas dataframe and deletes empty rows
-def 
+def delete_empty(data):
+    data.dropna(axis=0, how='all',thresh=None,subset=None,inplace=True)
+    return data
