@@ -1,18 +1,18 @@
-Name,Team
-b'Spencer Dinwiddie',b'BRK'
-b'Taurean Prince',b'BRK'
-b'Jarrett Allen',b'BRK'
-b'Joe Harris',b'BRK'
-b'DeAndre Jordan',b'BRK'
-b'Garrett Temple',b'BRK'
-b'Caris LeVert',b'BRK'
-b'Timoth\xc3\xa9 Luwawu-Cabarrot',b'BRK'
-b'Rodions Kurucs',b'BRK'
-b'Wilson Chandler',b'BRK'
-b'D\xc5\xbeanan Musa',b'BRK'
-b'Theo Pinson',b'BRK'
-b'Kyrie Irving',b'BRK'
-b'Nicolas Claxton',b'BRK'
-b'Chris Chiozza',b'BRK'
-b'Jeremiah Martin',b'BRK'
-b'Kevin Durant',b'BRK'
+Name,Team,Position
+Spencer Dinwiddie,BRK,SG
+Taurean Prince,BRK,SF
+Jarrett Allen,BRK,C
+Joe Harris,BRK,SF
+DeAndre Jordan,BRK,C
+Garrett Temple,BRK,SG
+Caris LeVert,BRK,SG
+Timothé Luwawu-Cabarrot,BRK,SG
+Rodions Kurucs,BRK,PF
+Wilson Chandler,BRK,SF
+Džanan Musa,BRK,SF
+Theo Pinson,BRK,SG
+Kyrie Irving,BRK,PG
+Nicolas Claxton,BRK,PF
+Chris Chiozza,BRK,PG
+Jeremiah Martin,BRK,PG
+Kevin Durant,BRK,F-G

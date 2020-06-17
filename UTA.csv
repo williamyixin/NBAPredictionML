@@ -1,18 +1,18 @@
-Name,Team
-b'Joe Ingles',b'UTA'
-"b""Royce O'Neale""",b'UTA'
-b'Donovan Mitchell',b'UTA'
-b'Bojan Bogdanovi\xc4\x87',b'UTA'
-b'Rudy Gobert',b'UTA'
-b'Georges Niang',b'UTA'
-b'Tony Bradley',b'UTA'
-b'Emmanuel Mudiay',b'UTA'
-b'Mike Conley',b'UTA'
-b'Jordan Clarkson',b'UTA'
-b'Ed Davis',b'UTA'
-b'Juwan Morgan',b'UTA'
-b'Rayjon Tucker',b'UTA'
-b'Nigel Williams-Goss',b'UTA'
-b'Miye Oni',b'UTA'
-b'Jarrell Brantley',b'UTA'
-b'Justin Wright-Foreman',b'UTA'
+Name,Team,Position
+Joe Ingles,UTA,SF
+Royce O'Neale,UTA,PF
+Donovan Mitchell,UTA,SG
+Bojan Bogdanović,UTA,SF
+Rudy Gobert,UTA,C
+Georges Niang,UTA,PF
+Tony Bradley,UTA,C
+Emmanuel Mudiay,UTA,PG
+Mike Conley,UTA,PG
+Jordan Clarkson,UTA,SG
+Ed Davis,UTA,C
+Juwan Morgan,UTA,PF
+Rayjon Tucker,UTA,SG
+Nigel Williams-Goss,UTA,PG
+Miye Oni,UTA,SG
+Jarrell Brantley,UTA,PF
+Justin Wright-Foreman,UTA,PG

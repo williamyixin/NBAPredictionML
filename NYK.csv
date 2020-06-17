@@ -1,18 +1,18 @@
-Name,Team
-b'Bobby Portis',b'NYK'
-b'Kevin Knox',b'NYK'
-b'Julius Randle',b'NYK'
-b'Taj Gibson',b'NYK'
-b'Mitchell Robinson',b'NYK'
-b'Frank Ntilikina',b'NYK'
-b'RJ Barrett',b'NYK'
-b'Damyean Dotson',b'NYK'
-b'Elfrid Payton',b'NYK'
-b'Wayne Ellington',b'NYK'
-b'Dennis Smith Jr.',b'NYK'
-b'Reggie Bullock',b'NYK'
-b'Allonzo Trier',b'NYK'
-b'Maurice Harkless',b'NYK'
-b'Kadeem Allen',b'NYK'
-b'Ignas Brazdeikis',b'NYK'
-b'Kenny Wooten',b'NYK'
+Name,Team,Position
+Bobby Portis,NYK,C
+Kevin Knox,NYK,SF
+Julius Randle,NYK,PF
+Taj Gibson,NYK,C
+Mitchell Robinson,NYK,C
+Frank Ntilikina,NYK,PG
+RJ Barrett,NYK,SG
+Damyean Dotson,NYK,SG
+Elfrid Payton,NYK,PG
+Wayne Ellington,NYK,SG
+Dennis Smith Jr.,NYK,PG
+Reggie Bullock,NYK,SG
+Allonzo Trier,NYK,PG
+Maurice Harkless,NYK,SF
+Kadeem Allen,NYK,SG
+Ignas Brazdeikis,NYK,SF
+Kenny Wooten,NYK,F

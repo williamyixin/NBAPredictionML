@@ -1,17 +1,17 @@
-Name,Team
-b'Langston Galloway',b'DET'
-b'Christian Wood',b'DET'
-b'Thon Maker',b'DET'
-b'Tony Snell',b'DET'
-b'Bruce Brown',b'DET'
-b'Sviatoslav Mykhailiuk',b'DET'
-b'Derrick Rose',b'DET'
-b'Sekou Doumbouya',b'DET'
-b'Luke Kennard',b'DET'
-b'Blake Griffin',b'DET'
-b'John Henson',b'DET'
-b'Louis King',b'DET'
-b'Jordan Bone',b'DET'
-b'Brandon Knight',b'DET'
-b'Khyri Thomas',b'DET'
-b'Jordan McRae',b'DET'
+Name,Team,Position
+Langston Galloway,DET,SG
+Christian Wood,DET,PF
+Thon Maker,DET,C
+Tony Snell,DET,SF
+Bruce Brown,DET,SG
+Sviatoslav Mykhailiuk,DET,SF
+Derrick Rose,DET,PG
+Sekou Doumbouya,DET,SF
+Luke Kennard,DET,SG
+Blake Griffin,DET,PF
+John Henson,DET,PF
+Louis King,DET,SF
+Jordan Bone,DET,PG
+Brandon Knight,DET,PG
+Khyri Thomas,DET,SG
+Jordan McRae,DET,SG

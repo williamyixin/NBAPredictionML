@@ -1,18 +1,18 @@
-Name,Team
-b'Ivica Zubac',b'LAC'
-b'Montrezl Harrell',b'LAC'
-b'Lou Williams',b'LAC'
-b'JaMychal Green',b'LAC'
-b'Kawhi Leonard',b'LAC'
-b'Patrick Patterson',b'LAC'
-b'Rodney McGruder',b'LAC'
-b'Patrick Beverley',b'LAC'
-b'Landry Shamet',b'LAC'
-b'Paul George',b'LAC'
-b'Terance Mann',b'LAC'
-b'Johnathan Motley',b'LAC'
-b'Amir Coffey',b'LAC'
-b'Marcus Morris',b'LAC'
-b'Mfiondu Kabengele',b'LAC'
-b'Reggie Jackson',b'LAC'
-b'Joakim Noah',b'LAC'
+Name,Team,Position
+Ivica Zubac,LAC,C
+Montrezl Harrell,LAC,C
+Lou Williams,LAC,SG
+JaMychal Green,LAC,PF
+Kawhi Leonard,LAC,SF
+Patrick Patterson,LAC,PF
+Rodney McGruder,LAC,SG
+Patrick Beverley,LAC,PG
+Landry Shamet,LAC,SG
+Paul George,LAC,SF
+Terance Mann,LAC,SG
+Johnathan Motley,LAC,PF
+Amir Coffey,LAC,SG
+Marcus Morris,LAC,PF
+Mfiondu Kabengele,LAC,C
+Reggie Jackson,LAC,PG
+Joakim Noah,LAC,C

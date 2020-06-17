@@ -1,17 +1,17 @@
-Name,Team
-b'Anfernee Simons',b'POR'
-b'CJ McCollum',b'POR'
-b'Hassan Whiteside',b'POR'
-b'Damian Lillard',b'POR'
-b'Gary Trent Jr.',b'POR'
-b'Carmelo Anthony',b'POR'
-b'Nassir Little',b'POR'
-b'Mario Hezonja',b'POR'
-b'Trevor Ariza',b'POR'
-b'Rodney Hood',b'POR'
-b'Caleb Swanigan',b'POR'
-b'Wenyen Gabriel',b'POR'
-b'Jaylen Hoard',b'POR'
-b'Moses Brown',b'POR'
-b'Zach Collins',b'POR'
-b'Jusuf Nurki\xc4\x87',b'POR'
+Name,Team,Position
+Anfernee Simons,POR,SG
+CJ McCollum,POR,SG
+Hassan Whiteside,POR,C
+Damian Lillard,POR,PG
+Gary Trent Jr.,POR,SG
+Carmelo Anthony,POR,PF
+Nassir Little,POR,PF
+Mario Hezonja,POR,PF
+Trevor Ariza,POR,SF
+Rodney Hood,POR,SF
+Caleb Swanigan,POR,PF
+Wenyen Gabriel,POR,PF
+Jaylen Hoard,POR,SF
+Moses Brown,POR,C
+Zach Collins,POR,PF
+Jusuf Nurkić,POR,C

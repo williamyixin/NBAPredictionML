@@ -1,17 +1,17 @@
-Name,Team
-b'Buddy Hield',b'SAC'
-b'Harrison Barnes',b'SAC'
-b'Nemanja Bjelica',b'SAC'
-b'Cory Joseph',b'SAC'
-b'Bogdan Bogdanovi\xc4\x87',b'SAC'
-"b""De'Aaron Fox""",b'SAC'
-b'Yogi Ferrell',b'SAC'
-b'Richaun Holmes',b'SAC'
-b'Harry Giles',b'SAC'
-b'Justin James',b'SAC'
-b'Kent Bazemore',b'SAC'
-b'Marvin Bagley III',b'SAC'
-b'Alex Len',b'SAC'
-b'DaQuan Jeffries',b'SAC'
-b'Kyle Guy',b'SAC'
-b'Jabari Parker',b'SAC'
+Name,Team,Position
+Buddy Hield,SAC,SG
+Harrison Barnes,SAC,PF
+Nemanja Bjelica,SAC,PF
+Cory Joseph,SAC,PG
+Bogdan Bogdanović,SAC,SG
+De'Aaron Fox,SAC,PG
+Yogi Ferrell,SAC,PG
+Richaun Holmes,SAC,C
+Harry Giles,SAC,PF
+Justin James,SAC,SG
+Kent Bazemore,SAC,SG
+Marvin Bagley III,SAC,PF
+Alex Len,SAC,C
+DaQuan Jeffries,SAC,SG
+Kyle Guy,SAC,SG
+Jabari Parker,SAC,PF

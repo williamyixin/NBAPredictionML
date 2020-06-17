@@ -1,17 +1,17 @@
-Name,Team
-b'Shai Gilgeous-Alexander',b'OKC'
-b'Dennis Schr\xc3\xb6der',b'OKC'
-b'Chris Paul',b'OKC'
-b'Steven Adams',b'OKC'
-b'Danilo Gallinari',b'OKC'
-b'Nerlens Noel',b'OKC'
-b'Darius Bazley',b'OKC'
-b'Terrance Ferguson',b'OKC'
-b'Abdel Nader',b'OKC'
-b'Mike Muscala',b'OKC'
-b'Hamidou Diallo',b'OKC'
-b'Deonte Burton',b'OKC'
-b'Luguentz Dort',b'OKC'
-b'Kevin Hervey',b'OKC'
-b'Isaiah Roby',b'OKC'
-b'Andre Roberson',b'OKC'
+Name,Team,Position
+Shai Gilgeous-Alexander,OKC,SG
+Dennis Schröder,OKC,PG
+Chris Paul,OKC,PG
+Steven Adams,OKC,C
+Danilo Gallinari,OKC,PF
+Nerlens Noel,OKC,C
+Darius Bazley,OKC,PF
+Terrance Ferguson,OKC,SF
+Abdel Nader,OKC,SF
+Mike Muscala,OKC,C
+Hamidou Diallo,OKC,SF
+Deonte Burton,OKC,SG
+Luguentz Dort,OKC,SG
+Kevin Hervey,OKC,PF
+Isaiah Roby,OKC,SF
+Andre Roberson,OKC,G-F

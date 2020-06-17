@@ -1,17 +1,17 @@
-Name,Team
-b'Miles Bridges',b'CHO'
-"b""Devonte' Graham""",b'CHO'
-b'Terry Rozier',b'CHO'
-b'P.J. Washington',b'CHO'
-b'Cody Zeller',b'CHO'
-b'Malik Monk',b'CHO'
-b'Bismack Biyombo',b'CHO'
-b'Cody Martin',b'CHO'
-b'Dwayne Bacon',b'CHO'
-b'Willy Hernang\xc3\xb3mez',b'CHO'
-b'Nicolas Batum',b'CHO'
-b'Caleb Martin',b'CHO'
-b'Jalen McDaniels',b'CHO'
-b'Joe Chealey',b'CHO'
-b'Kobi Simmons',b'CHO'
-b'Ray Spalding',b'CHO'
+Name,Team,Position
+Miles Bridges,CHO,SF
+Devonte' Graham,CHO,PG
+Terry Rozier,CHO,PG
+P.J. Washington,CHO,PF
+Cody Zeller,CHO,C
+Malik Monk,CHO,SG
+Bismack Biyombo,CHO,C
+Cody Martin,CHO,SF
+Dwayne Bacon,CHO,SG
+Willy Hernangómez,CHO,C
+Nicolas Batum,CHO,SF
+Caleb Martin,CHO,SF
+Jalen McDaniels,CHO,PF
+Joe Chealey,CHO,PG
+Kobi Simmons,CHO,G
+Ray Spalding,CHO,F

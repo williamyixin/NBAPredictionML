@@ -1,18 +1,18 @@
-Name,Team
-b'Kentavious Caldwell-Pope',b'LAL'
-b'Dwight Howard',b'LAL'
-b'Danny Green',b'LAL'
-b'JaVale McGee',b'LAL'
-b'LeBron James',b'LAL'
-b'Alex Caruso',b'LAL'
-b'Anthony Davis',b'LAL'
-b'Kyle Kuzma',b'LAL'
-b'Avery Bradley',b'LAL'
-b'Rajon Rondo',b'LAL'
-b'Jared Dudley',b'LAL'
-b'Quinn Cook',b'LAL'
-b'Markieff Morris',b'LAL'
-b'Kostas Antetokounmpo',b'LAL'
-b'Talen Horton-Tucker',b'LAL'
-b'Devontae Cacok',b'LAL'
-b'Dion Waiters',b'LAL'
+Name,Team,Position
+Kentavious Caldwell-Pope,LAL,SG
+Dwight Howard,LAL,C
+Danny Green,LAL,SG
+JaVale McGee,LAL,C
+LeBron James,LAL,PG
+Alex Caruso,LAL,PG
+Anthony Davis,LAL,PF
+Kyle Kuzma,LAL,PF
+Avery Bradley,LAL,SG
+Rajon Rondo,LAL,PG
+Jared Dudley,LAL,SF
+Quinn Cook,LAL,PG
+Markieff Morris,LAL,PF
+Kostas Antetokounmpo,LAL,PF
+Talen Horton-Tucker,LAL,SG
+Devontae Cacok,LAL,F
+Dion Waiters,LAL,G

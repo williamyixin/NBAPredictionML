@@ -1,17 +1,17 @@
-Name,Team
-b'Dillon Brooks',b'MEM'
-b'Tyus Jones',b'MEM'
-b'Jonas Valan\xc4\x8di\xc5\xabnas',b'MEM'
-b'Ja Morant',b'MEM'
-b'Kyle Anderson',b'MEM'
-b'Jaren Jackson Jr.',b'MEM'
-"b""De'Anthony Melton""",b'MEM'
-b'Brandon Clarke',b'MEM'
-b'Marko Guduric',b'MEM'
-b'Grayson Allen',b'MEM'
-b'Josh Jackson',b'MEM'
-b'Yuta Watanabe',b'MEM'
-b'John Konchar',b'MEM'
-b'Gorgui Dieng',b'MEM'
-b'Justise Winslow',b'MEM'
-b'Jontay Porter',b'MEM'
+Name,Team,Position
+Dillon Brooks,MEM,SG
+Tyus Jones,MEM,PG
+Jonas Valančiūnas,MEM,C
+Ja Morant,MEM,PG
+Kyle Anderson,MEM,PF
+Jaren Jackson Jr.,MEM,C
+De'Anthony Melton,MEM,PG
+Brandon Clarke,MEM,PF
+Marko Guduric,MEM,SG
+Grayson Allen,MEM,SG
+Josh Jackson,MEM,SG
+Yuta Watanabe,MEM,SG
+John Konchar,MEM,SG
+Gorgui Dieng,MEM,C
+Justise Winslow,MEM,F
+Jontay Porter,MEM,F-C

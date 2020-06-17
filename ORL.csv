@@ -1,18 +1,18 @@
-Name,Team
-b'Markelle Fultz',b'ORL'
-b'Terrence Ross',b'ORL'
-b'Evan Fournier',b'ORL'
-b'Mo Bamba',b'ORL'
-b'Aaron Gordon',b'ORL'
-b'Nikola Vu\xc4\x8devi\xc4\x87',b'ORL'
-b'D.J. Augustin',b'ORL'
-b'Wesley Iwundu',b'ORL'
-b'Michael Carter-Williams',b'ORL'
-b'Khem Birch',b'ORL'
-b'Jonathan Isaac',b'ORL'
-b'Al-Farouq Aminu',b'ORL'
-b'Gary Clark',b'ORL'
-b'Melvin Frazier',b'ORL'
-b'James Ennis',b'ORL'
-b'B.J. Johnson',b'ORL'
-b'Vic Law',b'ORL'
+Name,Team,Position
+Markelle Fultz,ORL,PG
+Terrence Ross,ORL,SG
+Evan Fournier,ORL,SG
+Mo Bamba,ORL,C
+Aaron Gordon,ORL,PF
+Nikola Vučević,ORL,C
+D.J. Augustin,ORL,PG
+Wesley Iwundu,ORL,SF
+Michael Carter-Williams,ORL,SG
+Khem Birch,ORL,C
+Jonathan Isaac,ORL,SF
+Al-Farouq Aminu,ORL,PF
+Gary Clark,ORL,PF
+Melvin Frazier,ORL,SG
+James Ennis,ORL,SF
+B.J. Johnson,ORL,SF
+Vic Law,ORL,SF

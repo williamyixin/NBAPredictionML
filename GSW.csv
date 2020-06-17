@@ -1,16 +1,16 @@
-Name,Team
-b'Eric Paschall',b'GSW'
-b'Marquese Chriss',b'GSW'
-b'Jordan Poole',b'GSW'
-b'Damion Lee',b'GSW'
-b'Ky Bowman',b'GSW'
-b'Draymond Green',b'GSW'
-b'Kevon Looney',b'GSW'
-b'Alen Smailagi\xc4\x87',b'GSW'
-b'Juan Toscano-Anderson',b'GSW'
-b'Andrew Wiggins',b'GSW'
-b'Dragan Bender',b'GSW'
-b'Mychal Mulder',b'GSW'
-b'Stephen Curry',b'GSW'
-b'Chasson Randle',b'GSW'
-b'Klay Thompson',b'GSW'
+Name,Team,Position
+Eric Paschall,GSW,PF
+Marquese Chriss,GSW,PF
+Jordan Poole,GSW,SG
+Damion Lee,GSW,SG
+Ky Bowman,GSW,PG
+Draymond Green,GSW,PF
+Kevon Looney,GSW,C
+Alen Smailagić,GSW,PF
+Juan Toscano-Anderson,GSW,SF
+Andrew Wiggins,GSW,SG
+Dragan Bender,GSW,SF
+Mychal Mulder,GSW,SG
+Stephen Curry,GSW,PG
+Chasson Randle,GSW,PG
+Klay Thompson,GSW,G-F

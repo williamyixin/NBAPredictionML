@@ -1,17 +1,17 @@
-Name,Team
-b'Patty Mills',b'SAS'
-b'Bryn Forbes',b'SAS'
-b'Trey Lyles',b'SAS'
-b'DeMar DeRozan',b'SAS'
-b'Derrick White',b'SAS'
-b'Rudy Gay',b'SAS'
-b'Dejounte Murray',b'SAS'
-b'Jakob Poeltl',b'SAS'
-b'LaMarcus Aldridge',b'SAS'
-b'Lonnie Walker',b'SAS'
-b'Marco Belinelli',b'SAS'
-b'Chimezie Metu',b'SAS'
-b'Drew Eubanks',b'SAS'
-b'Keldon Johnson',b'SAS'
-b'Quinndary Weatherspoon',b'SAS'
-b'Luka \xc5\xa0amani\xc4\x87',b'SAS'
+Name,Team,Position
+Patty Mills,SAS,PG
+Bryn Forbes,SAS,SG
+Trey Lyles,SAS,PF
+DeMar DeRozan,SAS,SF
+Derrick White,SAS,SG
+Rudy Gay,SAS,PF
+Dejounte Murray,SAS,PG
+Jakob Poeltl,SAS,C
+LaMarcus Aldridge,SAS,C
+Lonnie Walker,SAS,SG
+Marco Belinelli,SAS,SG
+Chimezie Metu,SAS,PF
+Drew Eubanks,SAS,PF
+Keldon Johnson,SAS,SF
+Quinndary Weatherspoon,SAS,SG
+Luka Šamanić,SAS,PF
