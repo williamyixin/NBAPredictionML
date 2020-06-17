@@ -10,7 +10,7 @@ import csv
 from datetime import datetime
 
 '''
-Returns the end of season PER's for the previous season. 
+Generates the end of season PER's for the previous season and puts it all into a csv
 These stats will be used in place of stats for the current season 
 When stats for the current season are insufficient.
 '''
@@ -39,7 +39,24 @@ def generate_previous_season(curr_year):
     print(df.head())
     df.to_csv('data/' + str(prev_year) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
         
-
+'''
+Returns all the links to the box scores of games of a year in a list
+'''
+def get_game_links(year):
+    months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
+    links = []
+    for month in months: 
+        url = 'https://www.basketball-reference.com/leagues/NBA_' + str(year) + '_games-' + month + '.html'
+        r = requests.get(url)
+        data = r.text
+        soup = BeautifulSoup(data, "html.parser")
+        table = soup.find('tbody')
+        for entry in table.find_all('tr'):
+            for cell in entry.find_all('td'):
+                if cell.attrs['data-stat'] == 'box_score_text':
+                    suffix = cell.find('a').attrs['href']
+                    links.append('https://www.basketball-reference.com' + suffix)
+    return links
 
 '''# Create a CSV file with the current DateTime in the name
 current_time = datetime.now()
