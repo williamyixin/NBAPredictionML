@@ -38,20 +38,20 @@ with open(player_data, mode = 'w') as csv_file:
         row = []
         for cell in entry.find_all('td'):
             if cell.attrs['data-stat'] == 'player':
-                name = cell.find('a').text.strip()
+                name = cell.find('a').text.strip().encode('utf-8')
                 row.append(name)
             elif cell.attrs['data-stat'] == 'team_id':
                 team = ""
                 if cell.find('a') == None: 
-                    team = cell.text.strip()
+                    team = cell.text.strip().encode('utf-8')
                 else: 
-                    team = cell.find('a').text.strip()
+                    team = cell.find('a').text.strip().encode('utf-8')
                 row.append(team)
             elif cell.attrs['data-stat'] == 'mp':
-                mp = cell.text.strip()
+                mp = cell.text.strip().encode('utf-8')
                 row.append(mp)
             elif cell.attrs['data-stat'] == 'per':
-                per = cell.text.strip()
+                per = cell.text.strip().encode('utf-8')
                 row.append(per)
         all_rows.append(row)
 
@@ -77,10 +77,10 @@ for team_name in team_abbreviations:
             row = []
             for cell in entry.find_all('td'):
                 if cell.attrs['data-stat'] == 'player':
-                    name = cell.find('a').text.strip()
+                    name = cell.find('a').text.strip().encode('utf-8')
                     row.append(name)
                     break;
-            row.append(team_name)
+            row.append(team_name.encode('utf-8'))
             all_rows.append(row)
 
         print(all_rows)
