@@ -7,6 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import csv
+import re
 from datetime import datetime
 
 '''
@@ -57,6 +58,29 @@ def get_game_links(year):
                     suffix = cell.find('a').attrs['href']
                     links.append('https://www.basketball-reference.com' + suffix)
     return links
+
+'''
+Returns a list of the team abbreviations given the year.
+'''
+def get_team_names(year):
+    team_names = []
+    url = 'https://www.basketball-reference.com/leagues/NBA_' + str(year) + '.html'
+    r = requests.get(url)
+    data = r.text
+    soup = BeautifulSoup(data, "html.parser")
+    tables = 0
+    for div in soup.find_all('div'):
+        if div.attrs.has_key('class') and div.attrs['class'] == 'standings_confs data_grid section_wrapper':
+            tables = div
+            break
+    
+    for link_tag in soup.find_all('a'):
+        link = link_tag.attrs['href']
+        if re.search('\/teams\/[A-Z]{3}\/[0-9]{4}.html', link):
+            if not (link[7:10] in team_names):
+                team_names.append(link[7:10])
+    return team_names
+
 
 '''# Create a CSV file with the current DateTime in the name
 current_time = datetime.now()
