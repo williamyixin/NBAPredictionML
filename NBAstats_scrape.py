@@ -70,7 +70,7 @@ def get_team_names(year):
     soup = BeautifulSoup(data, "html.parser")
     tables = 0
     for div in soup.find_all('div'):
-        if div.attrs.has_key('class') and div.attrs['class'] == 'standings_confs data_grid section_wrapper':
+        if ('class' in div.attrs) and div.attrs['class'] == 'standings_confs data_grid section_wrapper':
             tables = div
             break
     
@@ -81,6 +81,14 @@ def get_team_names(year):
                 team_names.append(link[7:10])
     return team_names
 
+'''
+Returns the soup of link, given the link
+'''
+def get_soup(link):
+    r = requests.get(link)
+    data = r.text
+    soup = BeautifulSoup(data, "html.parser")
+    return soup
 
 '''# Create a CSV file with the current DateTime in the name
 current_time = datetime.now()
