@@ -17,13 +17,13 @@ When stats for the current season are insufficient.
 '''
 def generate_previous_season(curr_year):
     prev_year = curr_year - 1
-    url = 'https://www.basketball-reference.com/leagues/NBA_' + str(prev_year) + '_advanced.html'
+    url = 'https://www.basketball-reference.com/leagues/NBA_' + str(prev_year) + '_totals.html'
     r = requests.get(url)
     data = r.text
     soup = BeautifulSoup(data, "html.parser")
     table = soup.find('tbody')
     all_rows = []
-    stats_we_want = ['player', 'mp', 'per', 'ows', 'dws', 'ws', 'ws_per_48', 'obpm', 'dbpm', 'bpm', 'vorp' ]
+    stats_we_want = ['player', 'mp', 'fg3', 'fg3a', 'fg2', 'fg2a', 'ft', 'fta', 'orb', 'drb', 'ast','stl','blk','tov','pf','pts']
     for entry in table.find_all('tr'):
         row = []
         for cell in entry.find_all('td'):
@@ -37,7 +37,6 @@ def generate_previous_season(curr_year):
             all_rows.append(row)
     df = pd.DataFrame(data=all_rows,  columns=stats_we_want)
     df.set_index(['player'], drop = True, inplace = True)
-    print(df.head())
     df.to_csv('data/' + str(prev_year) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
         
 '''
