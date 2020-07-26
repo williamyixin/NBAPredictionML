@@ -57,8 +57,8 @@ def savewinprob(model, X, y):
     index = (X['HomeWin'] == X['Round'])
     X['Correct'] = 0
     X.loc[index, ['Correct']] = 1
-    X.to_csv('SmallDatawithWinProb.csv')
-    model.save_model('smallcfb.model')
+    X.to_csv('NBAwithWinprob.csv')
+    model.save_model('nba.model')
 
 #gridsearch with given parameters to find best ones
 def optimizeparams(initialmodel, params, X_train, y_train):
@@ -132,6 +132,7 @@ def makemodel(X, y):
 
     model = modelfit(initialmodel, X_train, X_test, y_train, y_test)
 
+    #optimize max_depth and min_child_weight
     params = {'max_depth':[3,5,7,9], 'min_child_weight':[1,3,5]}
     model = optimizeparams(model, params, X_train, y_train)
     bestmaxdepth = model.get_params()['max_depth']
@@ -141,6 +142,7 @@ def makemodel(X, y):
     model.set_params(n_estimators=1000)
     model = modelfit(model, X_train, X_test, y_train, y_test)
 
+    #optimize gamma
     params = {'gamma':[i/10.0 for i in range(0,5)]}
     model = optimizeparams(model, params, X_train, y_train)
     bestgamma = model.get_params()['gamma']
@@ -151,6 +153,7 @@ def makemodel(X, y):
     model.set_params(n_estimators=1000)
     model = modelfit(model, X_train, X_test, y_train, y_test)
 
+    #optimize subsample and colsample_bytree
     params = {'subsample':[i/10.0 for i in range(6,10)], 'colsample_bytree':[i/10.0 for i in range(6,10)]}
     model = optimizeparams(model, params, X_train, y_train)
     bestsub = model.get_params()['subsample']
@@ -161,6 +164,7 @@ def makemodel(X, y):
     model.set_params(n_estimators=1000)
     model = modelfit(model, X_train, X_test, y_train, y_test)
 
+    #optimize reg_alpha and reg_lambda
     params = {'reg_alpha':[1e-5, 1e-2, 0, 1, 100], 'reg_lambda':[1e-5, 1e-2, 0, 1, 100]}
     model = optimizeparams(model, params, X_train, y_train)
     bestalpha = model.get_params()['reg_alpha']
@@ -177,10 +181,12 @@ def makemodel(X, y):
     model.set_params(n_estimators=1000)
     model = modelfit(model, X_train, X_test, y_train, y_test)
 
+    #set n_estimators up and learning_rate lower
     model.set_params(n_estimators=5000, learning_rate=0.01)
     model = modelfit(model, X_train, X_test, y_train, y_test)
     savewinprob(model, X, y)
 
+    #check which features are important and print finish time
     featureimportance(model, X_train, X_test, y_train, y_test)
     print("finished", end="")
     print(datetime.datetime.now())
