@@ -23,7 +23,7 @@ def generate_previous_season(curr_year):
     soup = BeautifulSoup(data, "html.parser")
     table = soup.find('tbody')
     all_rows = []
-    stats_we_want = ['player', 'mp', 'fg3', 'fg3a', 'fg2', 'fg2a', 'ft', 'fta', 'orb', 'drb', 'ast','stl','blk','tov','pf','pts']
+    stats_we_want = ['player', 'mp', 'fg', 'fga', 'fg3', 'fg3a', 'ft', 'fta', 'orb', 'drb', 'ast','stl','blk','tov','pf','pts']
     for entry in table.find_all('tr'):
         row = []
         for cell in entry.find_all('td'):
@@ -36,6 +36,7 @@ def generate_previous_season(curr_year):
         if len(row) != 0 and (len(all_rows) == 0 or all_rows[-1][0] != row[0]):
             all_rows.append(row)
     df = pd.DataFrame(data=all_rows,  columns=stats_we_want)
+    #df = df.append(pd.Series(0,index=df.columns), ignore_index=True)
     df.set_index(['player'], drop = True, inplace = True)
     df.to_csv('data/' + str(prev_year) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
         
@@ -43,7 +44,13 @@ def generate_previous_season(curr_year):
 Returns all the links to the box scores of games of a year in a list
 '''
 def get_game_links(year):
-    months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
+    months = []
+    if year == 2020: 
+        months = ['october', 'november', 'december', 'january', 'february', 'march']
+    elif year == 2012:
+        months = ['december', 'january', 'february', 'march', 'april', 'may', 'june']
+    else: 
+        months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
     links = []
     for month in months: 
         url = 'https://www.basketball-reference.com/leagues/NBA_' + str(year) + '_games-' + month + '.html'
