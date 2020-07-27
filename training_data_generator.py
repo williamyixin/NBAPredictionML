@@ -224,7 +224,7 @@ for year in years:
         row['GameID'] = f"{away_team} vs {home_team} {year}"
         row.set_index('GameID', inplace=True)
         #for some reason row becomes a n by n dataframe instead of n by 1 so i take the first row could be something to look into
-        trainingdata = trainingdata.append(row)
+        trainingdata = trainingdata.append(row.iloc[0])
         print(f"{away_team} vs {home_team} {year} done")
     trainingdata.to_csv('trainingdata50minutes.csv', encoding='utf-8')
     print(f"trainingdata {year} done")
