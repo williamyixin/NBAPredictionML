@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import re
 import datetime
 import numpy as np
-import defaultgenerator
+import default_generator
 
 '''
 Generates the training data.
@@ -46,7 +46,10 @@ def fixdataforjoin(data):
 
 #set the values for default player, can look to change rn it is set to 0s
 def default(player_name):
-    row = pd.DataFrame(defaultgenerator.getaverage(), columns=player_stats)
+    l = default_generator.get_average()
+    row = pd.DataFrame(data=l)
+    row = row.transpose()
+    row.columns = player_stats
     row['player'] = player_name
     row.set_index('player', inplace=True)
     return row
@@ -221,9 +224,9 @@ for year in years:
         row['GameID'] = f"{away_team} vs {home_team} {year}"
         row.set_index('GameID', inplace=True)
         #for some reason row becomes a n by n dataframe instead of n by 1 so i take the first row could be something to look into
-        trainingdata = trainingdata.append(row.iloc[0])
+        trainingdata = trainingdata.append(row)
         print(f"{away_team} vs {home_team} {year} done")
-    trainingdata.to_csv('trainingdata.csv', encoding='utf-8')
+    trainingdata.to_csv('trainingdata50minutes.csv', encoding='utf-8')
     print(f"trainingdata {year} done")
 
 #print end time (4-5 hours atm)
