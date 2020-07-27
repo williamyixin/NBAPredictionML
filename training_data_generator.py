@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import re
 import datetime
 import numpy as np
+import defaultgenerator
 
 '''
 Generates the training data.
@@ -45,7 +46,7 @@ def fixdataforjoin(data):
 
 #set the values for default player, can look to change rn it is set to 0s
 def default(player_name):
-    row = pd.DataFrame(np.zeros((1,len(player_stats))), columns=player_stats)
+    row = pd.DataFrame(defaultgenerator.getaverage(), columns=player_stats)
     row['player'] = player_name
     row.set_index('player', inplace=True)
     return row
@@ -228,11 +229,6 @@ for year in years:
 #print end time (4-5 hours atm)
 print("finished", end="")
 print(datetime.datetime.now())
-
-
-
-
-
 
         
 
