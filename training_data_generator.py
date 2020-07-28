@@ -45,8 +45,8 @@ def fixdataforjoin(data):
     return data
 
 #set the values for default player, can look to change rn it is set to 0s
-def default(player_name):
-    l = default_generator.get_average()
+def default(player_name, year):
+    l = default_generator.get_average(year)
     row = pd.DataFrame(data=l)
     row = row.transpose()
     row.columns = player_stats
@@ -55,7 +55,7 @@ def default(player_name):
     return row
 
 #beef of scraper: takes data and updates the team dictionary as well as the starter and other dataframes for corresponding teams
-def datamanip(team, side, starter, other):
+def datamanip(team, side, starter, other, year):
     if table.attrs['id'] == 'box-' + team + '-game-basic':
         #keep track of who is starter and who is not
         startercounter = 0
@@ -78,14 +78,14 @@ def datamanip(team, side, starter, other):
                         row = previous_season_player_data.loc[player_name]
                     else: 
                         #if not, use default values (to be determined)
-                        row = default(player_name)
+                        row = default(player_name, year)
             else: # if not, check if he was in prev season
                 if player_name in previous_season_player_data.index: 
                     #use previous season
                     row = previous_season_player_data.loc[player_name]
                 else: 
                     #if not, use default values (to be determined)
-                    row = default(player_name)
+                    row = default(player_name, year)
             #convert row to be able to add
             row = row.apply(pd.to_numeric)
             #convert minutes to seconds
@@ -192,11 +192,11 @@ for year in years:
 
             # if this is the table for the away team
             if table.attrs['id'] == 'box-' + away_team + '-game-basic':
-                Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other)
+                Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other, year)
                             
             #home team
             elif table.attrs['id'] == 'box-' + home_team + '-game-basic':
-                Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other)
+                Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other, year)
         
         #fix data for the join
         Home_Starter = fixdataforjoin(Home_Starter)

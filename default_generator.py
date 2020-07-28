@@ -2,8 +2,8 @@ import pandas as pd
 
 
 
-def get_average(): 
-    rookie_data = pd.read_csv('data/2019rookies.csv')
+def get_average(year): 
+    rookie_data = pd.read_csv('data/' + str(year) + 'rookies.csv')
     rookie_data.drop(columns = ['Rk', 'G', 'Player', 'Debut', 'Age', 'Yrs', 'FG%', '3P%', 'FT%', 'MP.1', 'PTS.1', 'TRB.1', 'AST.1'], inplace = True)
     row = ['yeetus']
 
