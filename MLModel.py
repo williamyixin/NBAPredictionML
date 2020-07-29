@@ -1,6 +1,6 @@
 '''
 Given a dataset create a xgboost model and optimize parameters, print out the feature importance after
-@author: Timothy Wu, Jasper Wu
+@author: Timothy Wu, William Zhang  
 '''
 #imports
 import pandas as pd
@@ -51,14 +51,14 @@ def modelfit(model, X_train, X_test, y_train, y_test, cv_folds=5, early_stopping
 #function that edits the final output csv for win%, allowing for closer analysis on what went wrong with the model
 def savewinprob(model, X, y):
     winprob = model.predict_proba(X)[:,1]
-    X.loc['HomeWinProb'] = winprob
-    X.loc['HomeWin'] = y
-    X.loc['Round'] = winprob.round()
+    X['HomeWinProb'] = winprob
+    X['HomeWin'] = y
+    X['Round'] = winprob.round()
     index = (X['HomeWin'] == X['Round'])
     X['Correct'] = 0
     X.loc[index, ['Correct']] = 1
-    X.to_csv('NBAwithWinprob.csv')
-    model.save_model('nba.model')
+    X.to_csv('NBAwithWinprob2019-2020.csv')
+    model.save_model('NBAMODEL2019-2020.model')
 
 #gridsearch with given parameters to find best ones
 def optimizeparams(initialmodel, params, X_train, y_train):
@@ -93,9 +93,11 @@ def featureimportance(model, X_train, X_test, y_train, y_test):
             bestaccuracy = accuracy
 
     print(f"Best Run: Thresh={bestthresh}, n={bestN}, Accuracy: {bestaccuracy*100}%")
+    '''
     xgb.plot_importance(model, height=2)
     plt.tick_params(axis='y', which='major', labelsize=5)
     plt.show()
+    '''
 
 #main function that runs through functions through each hyperparameter
 def makemodel(X, y):
@@ -195,14 +197,17 @@ def makemodel(X, y):
 #change this area for different data sets
 os.getcwd()
 
+minutes_threshold = [50]
 
 def to_int(num):
     return int(num)
-df = pd.read_csv("trainingdata.csv")
-df = df.drop(df.index[0])
-df = df.drop(["GameID"], axis=1)
-y = df['Homewin']
-features = list(df.columns[1:-1])
-X = df[features]
-y = y.apply(to_int)
-makemodel(X, y)
+#for min in minutes_threshold:
+if True:
+    df = pd.read_csv(f"trainingdata30minutes20182020.csv")
+    df = df.drop(df.index[0])
+    df = df.drop(["GameID"], axis=1)
+    y = df['Homewin']
+    features = list(df.columns[1:-1])
+    X = df[features]
+    y = y.apply(to_int)
+    makemodel(X, y)
