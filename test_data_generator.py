@@ -6,6 +6,10 @@ import xgboost as xgb
 minutes_threshold = 50
 year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
+
+def get_input():
+    f = open("/input/test.in", "r")
+
 #method that takes the row of data and reorients it and removes the name from it
 def removename(row):
     temp = row.reset_index(drop=True)
@@ -75,7 +79,7 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
         return starter, other
 
 def generate_row(home_starters, home_others, away_starters, away_others, home_team, away_team):
-    #NBAstats_scrape.generate_previous_season(year+1)
+    NBAstats_scrape.generate_previous_season(year+1)
     current_season_player_data = pd.read_csv('data/' + str(year) + '_end_of_season_player_summary.csv', encoding='utf-8')
     current_season_player_data.set_index('player', inplace=True)
     print(current_season_player_data.head())
@@ -119,17 +123,17 @@ def prediction(model, row, hometeam, awayteam):
     else:
         print(f"{awayteam} will win with a {winpercentage} % chance")
     
-'''
+
 awaystarter = ["Jaylen Brown", "Kyrie Irving", "Jayson Tatum", "Al Horford", "Gordon Hayward"]
 awayother = ["Marcus Smart", "Terry Rozier", "Aron Baynes", "Semi Ojeleye", "Shane Larkin", "Daniel Theis", "Abdel Nader"]
 homestarter = ["Lebron James", "Jae Crowder", "Derrick Rose", "Dwyane Wade", "Kevin Love"]
 homeother = ["J.R. Smith", "Tristan Thompson", "Jeff Green", "Iman Shumpert", "Kyle Korver", "Cedi Osman", "Channing Frye", "José Calderón"]
 row = generate_row(homestarter, homeother, awaystarter, awayother, "CLE", "BOS")
 model = xgb.XGBClassifier()
-model.load_model("NBAMODEL2010-2020.model")
+model.load_model("FINALNBAMODEL2010-2020.model")
 
 prediction(model, row)
-'''
+
 
 
 
