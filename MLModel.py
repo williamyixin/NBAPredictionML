@@ -103,7 +103,7 @@ def featureimportance(model, X_train, X_test, y_train, y_test):
 def makemodel(X, y):
     print("started", end="")
     print(datetime.datetime.now())
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=812)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
     #scale everything
     sc = StandardScaler()
     X_train_temp = sc.fit_transform(X_train)
@@ -203,7 +203,7 @@ def to_int(num):
     return int(num)
 #for min in minutes_threshold:
 if True:
-    df = pd.read_csv(f"trainingdata30minutes20182020.csv")
+    df = pd.read_csv(f"trainingdata50minutes20102020.csv")
     df = df.drop(df.index[0])
     df = df.drop(["GameID"], axis=1)
     y = df['Homewin']
