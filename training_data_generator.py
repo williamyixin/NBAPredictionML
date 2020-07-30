@@ -6,15 +6,16 @@ import re
 import datetime
 import numpy as np
 import default_generator
+import math
 
 '''
 Generates the training data.
 '''
 #years to scrape
-years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+years = [2019, 2020]
 
 #current minutes threshold for new players/new season, but we could look to change this to some other value
-minutes_threshold = 50
+minutes_threshold = [50]
 
 #features of the final training data set
 features = ['FG/MP_Home_Starter', 'FGA/MP_Home_Starter', '3P/MP_Home_Starter', '3PA/MP_Home_Starter', 
@@ -46,11 +47,16 @@ def fixdataforjoin(data):
 
 #set the values for default player, can look to change rn it is set to 0s
 def default(player_name, year):
+    '''
     l = default_generator.get_average(year)
     row = pd.DataFrame(data=l)
     row = row.transpose()
     row.columns = player_stats
     row['player'] = player_name
+    row.set_index('player', inplace=True)
+    '''
+    row = pd.DataFrame({'player': player_name, 'mp': 0, 'FG': 0, 'FGA': 0, '3P': 0, '3PA': 0, 'FT': 0, 'FTA': 0, 
+                        'ORB': 0,'DRB': 0,'AST': 0,'STL': 0,'BLK': 0,'TOV': 0,'PF': 0,'PTS': 0}, index=[0])
     row.set_index('player', inplace=True)
     return row
 
@@ -71,7 +77,7 @@ def datamanip(team, side, starter, other, year):
                 row = team_dict[team].loc[player_name]
                 
                 # if in dataframe, check if he has more than minutes threshold 
-                if row['mp'] < minutes_threshold:
+                if row['mp'] < min:
                     # if not, check if he was in prev season
                     if player_name in previous_season_player_data.index: 
                         #use previous season
@@ -141,93 +147,98 @@ trainingdata = pd.DataFrame(columns=features, index=['GameID'])
 #print when scraping started
 print("started", end="")
 print(datetime.datetime.now())
-for year in years: 
+for min in minutes_threshold:
 #if True:
-    #year = 2018
-    print(f"Currently Scraping {year}")
-    #Get basic info for NBA teams in this current year
-    NBAstats_scrape.generate_previous_season(year)
-    game_links = NBAstats_scrape.get_game_links(year)
-    team_abbreviations = NBAstats_scrape.get_team_names(year)
-    previous_season_player_data = pd.read_csv('data/' + str(year - 1) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
-    previous_season_player_data.set_index('player', inplace = True)
-    print(previous_season_player_data.head())
-    # Data Structure Initialization
-    player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
-    team_dict = {}
-    
-    for team in team_abbreviations:
-        team_dict[team] = pd.DataFrame(columns = player_stats) 
-        team_dict[team].set_index('player', inplace = True)
-
-    for link in game_links: 
+    #min = 50
+    for year in years: 
     #if True:
-        #link = "https://www.basketball-reference.com/boxscores/201710170CLE.html"
-        r = requests.get(link)
-        data = r.text
-        soup = BeautifulSoup(data, "html.parser")
-        home_team = link[-8:-5]
-        away_team = ''
-        home_score = 0
-        away_score = 0
+        #year = 2020
+        print(f"Currently Scraping {year}")
+        #Get basic info for NBA teams in this current year
+        NBAstats_scrape.generate_previous_season(year)
+        game_links = NBAstats_scrape.get_game_links(year)
+        team_abbreviations = NBAstats_scrape.get_team_names(year)
+        print(team_abbreviations)
+        previous_season_player_data = pd.read_csv('data/' + str(year - 1) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
+        previous_season_player_data.set_index('player', inplace = True)
+        print(previous_season_player_data.head())
+        # Data Structure Initialization
+        player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
+        team_dict = {}
         
-        # Gets the away team and score
-        for div in soup.find_all('div'):
-            if 'class' in div.attrs and div.attrs['class'] == ['scorebox']: 
-                for a_tag in div.find_all('a'): 
-                    if re.search('\/teams\/[A-Z]{3}\/[0-9]{4}.html', a_tag.attrs['href']):
-                        away_team = a_tag.attrs['href'][7:10]
-                        break
-                break 
+        for team in team_abbreviations:
+            team_dict[team] = pd.DataFrame(columns = player_stats) 
+            team_dict[team].set_index('player', inplace = True)
 
-        #initialize dataframes for starter and other for both teams
-        Home_Starter = pd.DataFrame(index=player_stats[1:])
-        Home_Other = pd.DataFrame(index=player_stats[1:])
-        Away_Starter = pd.DataFrame(index=player_stats[1:])
-        Away_Other = pd.DataFrame(index=player_stats[1:])
-        print(f"{away_team} vs {home_team} {year}")
+        for link in game_links: 
+        #if True:
+            #link = "https://www.basketball-reference.com/boxscores/201710170CLE.html"
+            r = requests.get(link)
+            data = r.text
+            soup = BeautifulSoup(data, "html.parser")
+            home_team = link[-8:-5]
+            away_team = ''
+            home_score = 0
+            away_score = 0
+            
+            # Gets the away team and score
+            for div in soup.find_all('div'):
+                if 'class' in div.attrs and div.attrs['class'] == ['scorebox']: 
+                    for a_tag in div.find_all('a'): 
+                        if re.search('\/teams\/[A-Z]{3}\/[0-9]{4}.html', a_tag.attrs['href']):
+                            away_team = a_tag.attrs['href'][7:10]
+                            break
+                    break 
 
-        for table in soup.find_all('table'):
-            table_body = table.find('tbody')
+            #initialize dataframes for starter and other for both teams
+            Home_Starter = pd.DataFrame(index=player_stats[1:])
+            Home_Other = pd.DataFrame(index=player_stats[1:])
+            Away_Starter = pd.DataFrame(index=player_stats[1:])
+            Away_Other = pd.DataFrame(index=player_stats[1:])
+            print(f"{away_team} vs {home_team} {year}")
 
-            # if this is the table for the away team
-            if table.attrs['id'] == 'box-' + away_team + '-game-basic':
-                Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other, year)
-                            
-            #home team
-            elif table.attrs['id'] == 'box-' + home_team + '-game-basic':
-                Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other, year)
-        
-        #fix data for the join
-        Home_Starter = fixdataforjoin(Home_Starter)
-        Home_Other = fixdataforjoin(Home_Other)
-        Away_Starter = fixdataforjoin(Away_Starter)
-        Away_Other = fixdataforjoin(Away_Other)
+            for table in soup.find_all('table'):
+                table_body = table.find('tbody')
 
-        #fix the column names for each
-        Home_Starter = Home_Starter.add_suffix('/MP_Home_Starter')
-        Home_Other = Home_Other.add_suffix('/MP_Home_Other')
-        Away_Starter = Away_Starter.add_suffix('/MP_Away_Starter')
-        Away_Other = Away_Other.add_suffix('/MP_Away_Other')
-        
-        #join them together
-        row = Home_Starter.join(Home_Other)
-        row = row.join(Away_Starter)
-        row = row.join(Away_Other)
+                # if this is the table for the away team
+                if table.attrs['id'] == 'box-' + away_team + '-game-basic':
+                    Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other, year)
+                                
+                #home team
+                elif table.attrs['id'] == 'box-' + home_team + '-game-basic':
+                    Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other, year)
+            
+            #fix data for the join
+            Home_Starter = fixdataforjoin(Home_Starter)
+            Home_Other = fixdataforjoin(Home_Other)
+            Away_Starter = fixdataforjoin(Away_Starter)
+            Away_Other = fixdataforjoin(Away_Other)
 
-        #determines who wins
-        if home_score > away_score:
-            row['Homewin'] = 1
-        else:
-            row['Homewin'] = 0
-        #set the game id
-        row['GameID'] = f"{away_team} vs {home_team} {year}"
-        row.set_index('GameID', inplace=True)
-        #for some reason row becomes a n by n dataframe instead of n by 1 so i take the first row could be something to look into
-        trainingdata = trainingdata.append(row.iloc[0])
-        print(f"{away_team} vs {home_team} {year} done")
-    trainingdata.to_csv('trainingdata50minutes.csv', encoding='utf-8')
-    print(f"trainingdata {year} done")
+            #fix the column names for each
+            Home_Starter = Home_Starter.add_suffix('/MP_Home_Starter')
+            Home_Other = Home_Other.add_suffix('/MP_Home_Other')
+            Away_Starter = Away_Starter.add_suffix('/MP_Away_Starter')
+            Away_Other = Away_Other.add_suffix('/MP_Away_Other')
+            
+            #join them together
+            row = Home_Starter.join(Home_Other)
+            row = row.join(Away_Starter)
+            row = row.join(Away_Other)
+
+            #determines who wins
+            if home_score > away_score:
+                row['Homewin'] = 1
+            else:
+                row['Homewin'] = 0
+            #set the game id
+            row['GameID'] = f"{away_team} vs {home_team} {year}"
+            row.set_index('GameID', inplace=True, drop=True)
+            #for some reason row becomes a n by n dataframe instead of n by 1 so i take the first row could be something to look into
+            trainingdata = trainingdata.append(row.iloc[0])
+            print(f"{away_team} vs {home_team} {year} done")
+        trainingdata.to_csv(f'trainingdata{min}minutes2019-2020.csv', encoding='utf-8')
+        #trainingdata.to_csv(f'test{min}minutes.csv', encoding='utf-8')
+        print(f"trainingdata {min} {year} done")
 
 #print end time (4-5 hours atm)
 print("finished", end="")
