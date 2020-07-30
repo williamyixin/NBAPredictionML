@@ -12,7 +12,7 @@ import math
 Generates the training data.
 '''
 #years to scrape
-years = [2019, 2020]
+years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
 
 #current minutes threshold for new players/new season, but we could look to change this to some other value
 minutes_threshold = [50]
@@ -46,7 +46,7 @@ def fixdataforjoin(data):
     return data
 
 #set the values for default player, can look to change rn it is set to 0s
-def default(player_name, year):
+def default(player_name):
     '''
     l = default_generator.get_average(year)
     row = pd.DataFrame(data=l)
@@ -202,11 +202,11 @@ for min in minutes_threshold:
 
                 # if this is the table for the away team
                 if table.attrs['id'] == 'box-' + away_team + '-game-basic':
-                    Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other, year)
+                    Away_Starter, Away_Other, away_score = datamanip(away_team, "away", Away_Starter, Away_Other)
                                 
                 #home team
                 elif table.attrs['id'] == 'box-' + home_team + '-game-basic':
-                    Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other, year)
+                    Home_Starter, Home_Other, home_score = datamanip(home_team, "home", Home_Starter, Home_Other)
             
             #fix data for the join
             Home_Starter = fixdataforjoin(Home_Starter)
