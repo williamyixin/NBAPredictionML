@@ -73,7 +73,6 @@ def default(player_name):
     return row
 
 def data(starter, other, starterlist, otherlist, currentdata, previousdata):
-    print(otherlist)
     for player_name in starterlist:
         if player_name in currentdata.index:
             row = currentdata.loc[player_name]
@@ -107,7 +106,6 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
             else:
                 otherrow = default(player_name)
         otherrow = otherrow.apply(pd.to_numeric)
-        print(otherrow)
         otherrow['mp'] = otherrow['mp'] * 60
         df = removename(otherrow)
         other = other.add(df, fill_value=0, axis=1)
@@ -117,10 +115,8 @@ def generate_row(home_starters, home_others, away_starters, away_others, home_te
     NBAstats_scrape.generate_previous_season(year+1)
     current_season_player_data = pd.read_csv('data/' + str(year) + '_end_of_season_player_summary.csv', encoding='utf-8')
     current_season_player_data.set_index('player', inplace=True)
-    print(current_season_player_data.head())
     previous_season_player_data = pd.read_csv('data/' + str(year - 1) + '_end_of_season_player_summary.csv', encoding = 'utf-8')
     previous_season_player_data.set_index('player', inplace = True)
-    print(previous_season_player_data.head())
     
 
     Home_Starter = pd.DataFrame(index=player_stats[1:])
@@ -153,10 +149,14 @@ def prediction(model, row, hometeam, awayteam):
     data = row.reset_index(drop=True)
     prediction = model.predict(data)
     winpercentage = model.predict_proba(data)[:,1]
+    '''
+    #uncomment if not 2020
     if prediction == 1:
         print(f"{hometeam} will win with a {winpercentage} % chance")
     else:
         print(f"{awayteam} will win with a {1-winpercentage} % chance")
+    '''
+    return winpercentage
     
 inputs = get_input()
 homestarter = inputs[2]
@@ -172,9 +172,19 @@ print(homeother)
 row = generate_row(homestarter, homeother, awaystarter, awayother, hometeam, awayteam)
 model = xgb.XGBClassifier()
 model.load_model('FULLNBAMODEL2010-2020.model')
+homewinpercentage = prediction(model, row, hometeam, awayteam)
 
+#for 2020 season
+tempsecondrow = generate_row(awaystarter, awayother, homestarter, homeother, awayteam, hometeam)
+secondhomewinpercentage = prediction(model, tempsecondrow, awayteam, hometeam)
 
-prediction(model, row, hometeam, awayteam)
+print(f"{hometeam} at home win percentage: {homewinpercentage}")
+print(f"{awayteam} at home win percentage: {secondhomewinpercentage}")
+homewinaverage = (homewinpercentage + (1 - secondhomewinpercentage)) / 2.0
+if homewinaverage > 0.5:
+    print(f"{hometeam} will win with a {homewinaverage} % chance")
+else:
+    print(f"{awayteam} will win with a {1-homewinaverage} % chance")
 
 os.getcwd()
 if not os.path.exists('GameRows'):
