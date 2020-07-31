@@ -8,7 +8,39 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open("/input/test.in", "r")
+    f = open('input/test.in', "r")
+    away_starter = []
+    away_other = []
+    home_starter = []
+    home_other = []
+    away_team = ''
+    home_team = ''
+    home = True
+    starter_count = 0
+    for s in f: 
+        s = s[:-1]
+        if s[0:4] == 'Home': 
+            home_team = s[6:9]
+        elif s[0:4] == 'Away':
+            away_team = s[6:9]
+            home = False
+            starter_count = 0
+        elif home:
+            if (starter_count < 5): 
+                home_starter.append(s)
+                starter_count += 1
+            else: 
+                home_other.append(s)
+        elif not home: 
+            if starter_count < 5: 
+                away_starter.append(s)
+                starter_count += 1
+            else: 
+                away_other.append(s)
+
+    return [home_team, away_team, home_starter, home_other, away_starter, away_other]
+
+
 
 #method that takes the row of data and reorients it and removes the name from it
 def removename(row):
@@ -123,17 +155,16 @@ def prediction(model, row, hometeam, awayteam):
     else:
         print(f"{awayteam} will win with a {winpercentage} % chance")
     
-
-awaystarter = ["Jaylen Brown", "Kyrie Irving", "Jayson Tatum", "Al Horford", "Gordon Hayward"]
-awayother = ["Marcus Smart", "Terry Rozier", "Aron Baynes", "Semi Ojeleye", "Shane Larkin", "Daniel Theis", "Abdel Nader"]
-homestarter = ["Lebron James", "Jae Crowder", "Derrick Rose", "Dwyane Wade", "Kevin Love"]
-homeother = ["J.R. Smith", "Tristan Thompson", "Jeff Green", "Iman Shumpert", "Kyle Korver", "Cedi Osman", "Channing Frye", "José Calderón"]
+inputs = get_input()
+awaystarter = inputs[2]
+awayother = inputs[3]
+homestarter = inputs[4]
+homeother = inputs[5]
 row = generate_row(homestarter, homeother, awaystarter, awayother, "CLE", "BOS")
 model = xgb.XGBClassifier()
-model.load_model("FINALNBAMODEL2010-2020.model")
+model.load_model('FULLNBAMODEL2010-2020.model')
 
-prediction(model, row)
-
+prediction(model, row, inputs[0], inputs[1])
 
 
 
