@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/ORL_VS_BRK.in', "r",encoding='utf-8')
+    f = open('input/MEM_VS_POR.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -172,7 +172,7 @@ model = xgb.XGBClassifier()
 model.load_model('FULLNBAMODEL2010-2020.model')
 
 
-prediction(model, row, inputs[0], inputs[1])
+prediction(model, row, hometeam, awayteam)
 
 os.getcwd()
 if not os.path.exists('GameRows'):
