@@ -154,7 +154,7 @@ def prediction(model, row, hometeam, awayteam):
     if prediction == 1:
         print(f"{hometeam} will win with a {winpercentage} % chance")
     else:
-        print(f"{awayteam} will win with a {winpercentage} % chance")
+        print(f"{awayteam} will win with a {1-winpercentage} % chance")
     
 inputs = get_input()
 homestarter = inputs[2]
