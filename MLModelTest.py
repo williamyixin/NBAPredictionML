@@ -57,8 +57,8 @@ def savewinprob(model, X, y):
     index = (X['HomeWin'] == X['Round'])
     X['Correct'] = 0
     X.loc[index, ['Correct']] = 1
-    X.to_csv('NBAwithWinprob2019-2020.csv')
-    model.save_model('NBAMODEL2019-2020.model')
+    X.to_csv('NBAwithWinprob2010-2020.csv')
+    model.save_model('NBAMODEL2010-2020.model')
 
 #gridsearch with given parameters to find best ones
 def optimizeparams(initialmodel, params, X_train, y_train):
@@ -80,7 +80,8 @@ def featureimportance(model, X_train, X_test, y_train, y_test):
         select_X_train = selection.transform(X_train)
         select_X_test = selection.transform(X_test)
         # train model
-        selection_model = XGBClassifier()
+        
+        selection_model = XGBClassifier(model.get_xgb_params())
         selection_model = modelfit(selection_model, select_X_train, select_X_test, y_train, y_test, featureimportance=True)
         # eval model
         y_pred = selection_model.predict(select_X_test)
