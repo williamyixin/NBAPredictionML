@@ -8,7 +8,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/test.in', "r")
+    f = open('input/LAL_VS_LAC.in', "r")
     away_starter = []
     away_other = []
     home_starter = []
@@ -160,7 +160,7 @@ awaystarter = inputs[2]
 awayother = inputs[3]
 homestarter = inputs[4]
 homeother = inputs[5]
-row = generate_row(homestarter, homeother, awaystarter, awayother, "CLE", "BOS")
+row = generate_row(homestarter, homeother, awaystarter, awayother, "LAL", "LAC")
 model = xgb.XGBClassifier()
 model.load_model('FULLNBAMODEL2010-2020.model')
 
