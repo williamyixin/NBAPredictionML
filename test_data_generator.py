@@ -2,6 +2,7 @@ import NBAstats_scrape
 import pandas as pd
 import numpy as np
 import xgboost as xgb
+import os
 
 minutes_threshold = 50
 year = 2020
@@ -160,15 +161,24 @@ homestarter = inputs[2]
 homeother = inputs[3]
 awaystarter = inputs[4]
 awayother = inputs[5]
+hometeam = inputs[0]
+awayteam = inputs[1]
 print(awaystarter)
 print(awayother)
 print(homestarter)
 print(homeother)
-row = generate_row(homestarter, homeother, awaystarter, awayother, "LAL", "LAC")
+row = generate_row(homestarter, homeother, awaystarter, awayother, hometeam, awayteam)
 model = xgb.XGBClassifier()
 model.load_model('FULLNBAMODEL2010-2020.model')
 
+
 prediction(model, row, inputs[0], inputs[1])
+
+os.getcwd()
+if not os.path.exists('GameRows'):
+    os.mkdir('GameRows')
+
+row.to_csv(f"GameRows/{awayteam}@{hometeam}_{year}.csv", encoding='utf-8')
 
 
 
