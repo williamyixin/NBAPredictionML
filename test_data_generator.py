@@ -156,10 +156,14 @@ def prediction(model, row, hometeam, awayteam):
         print(f"{awayteam} will win with a {winpercentage} % chance")
     
 inputs = get_input()
-awaystarter = inputs[2]
-awayother = inputs[3]
-homestarter = inputs[4]
-homeother = inputs[5]
+homestarter = inputs[2]
+homeother = inputs[3]
+awaystarter = inputs[4]
+awayother = inputs[5]
+print(awaystarter)
+print(awayother)
+print(homestarter)
+print(homeother)
 row = generate_row(homestarter, homeother, awaystarter, awayother, "LAL", "LAC")
 model = xgb.XGBClassifier()
 model.load_model('FULLNBAMODEL2010-2020.model')
