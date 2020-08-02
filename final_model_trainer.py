@@ -24,9 +24,9 @@ def to_int(num):
     return int(num)
 
 
-df = pd.read_csv(f"trainingdata50minutes20102020.csv")
-df = df.drop(df.index[0])
-df = df.drop(["GameID"], axis=1)
+df = pd.read_csv("updatedtrainingdata.csv")
+#df = df.drop(df.index[0])
+#df = df.drop(["GameID"], axis=1)
 y = df['Homewin']
 features = list(df.columns[1:-1])
 X = df[features]
@@ -84,3 +84,4 @@ model = XGBClassifier(
 model = model.fit(select_X, y, eval_metric='auc')
 
 model.save_model('FULLNBAMODEL2010-2020.model')
+print("model complete")
