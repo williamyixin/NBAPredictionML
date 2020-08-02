@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/MIA_VS_DEN.in', "r",encoding='utf-8')
+    f = open('input/UTA_VS_OKC.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -19,7 +19,7 @@ def get_input():
     home = True
     starter_count = 0
     for s in f: 
-        s = s[:-1]
+        s = s.strip()
         if s[0:4] == 'Home': 
             home_team = s[6:9]
         elif s[0:4] == 'Away':
