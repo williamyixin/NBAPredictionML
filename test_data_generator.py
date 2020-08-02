@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/UTA_VS_OKC.in', "r",encoding='utf-8')
+    f = open('input/LAL_VS_TOR.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -89,6 +89,7 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
                 row = default(player_name)
         row = row.apply(pd.to_numeric)
         row['mp'] = row['mp'] * 60
+        print(row)
         df = removename(row)
         starter = starter.add(df, fill_value=0, axis=1)
     for player_name in otherlist:
@@ -107,6 +108,7 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
                 otherrow = default(player_name)
         otherrow = otherrow.apply(pd.to_numeric)
         otherrow['mp'] = otherrow['mp'] * 60
+        print(otherrow)
         df = removename(otherrow)
         other = other.add(df, fill_value=0, axis=1)
     return starter, other

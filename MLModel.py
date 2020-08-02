@@ -57,8 +57,8 @@ def savewinprob(model, X, y):
     index = (X['HomeWin'] == X['Round'])
     X['Correct'] = 0
     X.loc[index, ['Correct']] = 1
-    X.to_csv('NBAwithWinprob2019-2020.csv')
-    model.save_model('NBAMODEL2019-2020.model')
+    X.to_csv('NBAwithWinprob.csv')
+    model.save_model('FULLNBAMODEL2010-2020.model')
 
 #gridsearch with given parameters to find best ones
 def optimizeparams(initialmodel, params, X_train, y_train):
@@ -80,7 +80,8 @@ def featureimportance(model, X_train, X_test, y_train, y_test):
         select_X_train = selection.transform(X_train)
         select_X_test = selection.transform(X_test)
         # train model
-        selection_model = XGBClassifier()
+        #selection_model = XGBClassifier(model.get_xgb_params())
+        selection_model = model
         selection_model = modelfit(selection_model, select_X_train, select_X_test, y_train, y_test, featureimportance=True)
         # eval model
         y_pred = selection_model.predict(select_X_test)
@@ -103,7 +104,7 @@ def featureimportance(model, X_train, X_test, y_train, y_test):
 def makemodel(X, y):
     print("started", end="")
     print(datetime.datetime.now())
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=812)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
     #scale everything
     sc = StandardScaler()
     X_train_temp = sc.fit_transform(X_train)
@@ -203,9 +204,10 @@ def to_int(num):
     return int(num)
 #for min in minutes_threshold:
 if True:
-    df = pd.read_csv(f"trainingdata30minutes20182020.csv")
-    df = df.drop(df.index[0])
-    df = df.drop(["GameID"], axis=1)
+    df = pd.read_csv("updatedtrainingdata.csv")
+    print(df)
+    #df = df.drop(df.index[0])
+    #df = df.drop(["GameID"], axis=1)
     y = df['Homewin']
     features = list(df.columns[1:-1])
     X = df[features]
