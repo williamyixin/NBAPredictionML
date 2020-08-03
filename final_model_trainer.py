@@ -25,6 +25,7 @@ def to_int(num):
 
 
 df = pd.read_csv("updatedtrainingdata.csv")
+#df = pd.read_csv("trainingdata50minutes20102020.csv", encoding='utf-8')
 #df = df.drop(df.index[0])
 #df = df.drop(["GameID"], axis=1)
 y = df['Homewin']
@@ -54,7 +55,7 @@ model = XGBClassifier(
 
 model = model.fit(X, y, eval_metric='auc')
 
-
+'''
 thresh = 0.01702188141644001
 
 selection = SelectFromModel(model, threshold=thresh, prefit=True)
@@ -82,6 +83,7 @@ model = XGBClassifier(
                 random_state=812)
 
 model = model.fit(select_X, y, eval_metric='auc')
+'''
 
-model.save_model('FULLNBAMODEL2010-2020.model')
+model.save_model('FULLNBAMODEL2010-2020test.model')
 print("model complete")

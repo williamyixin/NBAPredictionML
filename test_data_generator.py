@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/LAL_VS_TOR.in', "r",encoding='utf-8')
+    f = open('input/DAL_VS_PHO.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -173,7 +173,7 @@ print(homestarter)
 print(homeother)
 row = generate_row(homestarter, homeother, awaystarter, awayother, hometeam, awayteam)
 model = xgb.XGBClassifier()
-model.load_model('FULLNBAMODEL2010-2020.model')
+model.load_model('FULLNBAMODEL2010-2020test.model')
 homewinpercentage = prediction(model, row, hometeam, awayteam)
 
 #for 2020 season
