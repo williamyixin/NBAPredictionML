@@ -16,6 +16,7 @@ for row in rows:
     temp = pd.read_csv(row, encoding='utf-8')
     currentdata = currentdata.append(temp, ignore_index=True)
     os.remove(row)
+    print(f"{row} complete")
 
 currentdata.to_csv("../updatedtrainingdata.csv", encoding='utf-8', index=False)
 #temp = pd.read_csv("../updatedtrainingdata.csv", encoding='utf-8')
