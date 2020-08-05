@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/SAS_VS_PHI.in', "r",encoding='utf-8')
+    f = open('input/HOU_VS_POR.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -53,7 +53,7 @@ def removename(row):
 #reorients the data and divides it
 def fixdataforjoin(data):
     data = data.transpose()
-    data = data.div(data['mp'] / 60, axis='index')
+    data = data.div(data['mp'], axis='index')
     data = data.drop("mp", axis=1) 
     return data
 
@@ -88,8 +88,7 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
             else:
                 row = default(player_name)
         row = row.apply(pd.to_numeric)
-        row['mp'] = row['mp'] * 60
-        print(row)
+        #row['mp'] = row['mp'] * 60
         df = removename(row)
         starter = starter.add(df, fill_value=0, axis=1)
     for player_name in otherlist:
@@ -107,8 +106,7 @@ def data(starter, other, starterlist, otherlist, currentdata, previousdata):
             else:
                 otherrow = default(player_name)
         otherrow = otherrow.apply(pd.to_numeric)
-        otherrow['mp'] = otherrow['mp'] * 60
-        print(otherrow)
+        #otherrow['mp'] = otherrow['mp'] * 60
         df = removename(otherrow)
         other = other.add(df, fill_value=0, axis=1)
     return starter, other
