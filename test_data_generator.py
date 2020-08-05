@@ -9,7 +9,7 @@ year = 2020
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/BOS_VS_POR.in', "r",encoding='utf-8')
+    f = open('input/SAS_VS_PHI.in', "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
