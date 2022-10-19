@@ -12,7 +12,7 @@ import math
 Generates the training data.
 '''
 #years to scrape
-years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+years = [2023]
 
 #current minutes threshold for new players/new season, but we could look to change this to some other value
 minutes_threshold = [50]

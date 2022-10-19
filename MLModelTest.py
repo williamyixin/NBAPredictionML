@@ -57,8 +57,8 @@ def savewinprob(model, X, y):
     index = (X['HomeWin'] == X['Round'])
     X['Correct'] = 0
     X.loc[index, ['Correct']] = 1
-    X.to_csv('NBAwithWinprob2010-2020.csv')
-    model.save_model('NBAMODEL2010-2020.model')
+    X.to_csv('NBAwithWinprob2010-2022.csv')
+    model.save_model('NBAMODEL2010-2022.model')
 
 #gridsearch with given parameters to find best ones
 def optimizeparams(initialmodel, params, X_train, y_train):

@@ -4,7 +4,7 @@ import NBAstats_scrape
 Generates the training data.
 '''
 
-years = [2018]
+years = [2021, 2022]
 
 minutes_threshold = 100
 

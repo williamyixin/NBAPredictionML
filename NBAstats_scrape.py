@@ -49,11 +49,16 @@ def get_game_links(year):
         months = ['october', 'november', 'december', 'january', 'february', 'march']
     elif year == 2012:
         months = ['december', 'january', 'february', 'march', 'april', 'may', 'june']
+    elif year == 2022:
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
+    elif year == 2021:
+        months = ['december', 'january', 'february', 'march', 'april', 'may', 'june']
     else: 
         months = ['october', 'november', 'december', 'january', 'february', 'march', 'april', 'may', 'june']
     links = []
     for month in months: 
         url = 'https://www.basketball-reference.com/leagues/NBA_' + str(year) + '_games-' + month + '.html'
+        print(url)
         r = requests.get(url)
         data = r.text
         soup = BeautifulSoup(data, "html.parser")
@@ -81,10 +86,11 @@ def get_team_names(year):
             break
     
     for link_tag in soup.find_all('a'):
-        link = link_tag.attrs['href']
-        if re.search('\/teams\/[A-Z]{3}\/[0-9]{4}.html', link):
-            if not (link[7:10] in team_names):
-                team_names.append(link[7:10])
+        if 'href' in link_tag.attrs:
+            link = link_tag.attrs['href']
+            if re.search('\/teams\/[A-Z]{3}\/[0-9]{4}.html', link):
+                if not (link[7:10] in team_names):
+                    team_names.append(link[7:10])
     return team_names
 
 '''

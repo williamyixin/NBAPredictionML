@@ -85,5 +85,5 @@ model = XGBClassifier(
 model = model.fit(select_X, y, eval_metric='auc')
 '''
 
-model.save_model('FULLNBAMODEL2010-2020test.model')
+model.save_model('FULLNBAMODEL2010-2022test.model')
 print("model complete")

@@ -3,13 +3,16 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 import os
+import sys
+
+input_file = sys.argv[1]
 
 minutes_threshold = 50
-year = 2020
+year = 2022
 player_stats = ['player', 'mp', 'FG', 'FGA', '3P', '3PA', 'FT', 'FTA', 'ORB','DRB','AST','STL','BLK','TOV','PF','PTS']
 
 def get_input():
-    f = open('input/HOU_VS_OKC3.in', "r",encoding='utf-8')
+    f = open(input_file, "r",encoding='utf-8')
     away_starter = []
     away_other = []
     home_starter = []
@@ -149,13 +152,13 @@ def prediction(model, row, hometeam, awayteam):
     data = row.reset_index(drop=True)
     prediction = model.predict(data)
     winpercentage = model.predict_proba(data)[:,1]
-    '''
+    
     #uncomment if not 2020
     if prediction == 1:
         print(f"{hometeam} will win with a {winpercentage} % chance")
     else:
         print(f"{awayteam} will win with a {1-winpercentage} % chance")
-    '''
+    
     return winpercentage
     
 inputs = get_input()
@@ -171,7 +174,7 @@ print(homestarter)
 print(homeother)
 row = generate_row(homestarter, homeother, awaystarter, awayother, hometeam, awayteam)
 model = xgb.XGBClassifier()
-model.load_model('FULLNBAMODEL2010-2020test.model')
+model.load_model('FULLNBAMODEL2010-2022test.model')
 homewinpercentage = prediction(model, row, hometeam, awayteam)
 
 #for 2020 season
