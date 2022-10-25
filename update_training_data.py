@@ -14,10 +14,12 @@ rows = os.listdir(path)
 os.chdir("GameRows")
 for row in rows:
     temp = pd.read_csv(row, encoding='utf-8')
+    print(temp)
     currentdata = currentdata.append(temp, ignore_index=True)
     os.remove(row)
     print(f"{row} complete")
-
+currentdata.drop('Unnamed: 57', axis=1, inplace=True)
+print(currentdata)
 currentdata.to_csv("../updatedtrainingdata.csv", encoding='utf-8', index=False)
 #temp = pd.read_csv("../updatedtrainingdata.csv", encoding='utf-8')
 #print(temp)
